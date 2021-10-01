@@ -1,0 +1,20 @@
+:root {
+	--primary: #c51f5d;
+	--white: #fff;
+	--background-color: #243447;
+	--background-color-dark: #141d26;
+} 
+
+
+* {
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+html, body {
+	font-size: 16px;
+	margin: 0;
+	height: 100vh;
+	padding: .25rem;
+	color: var(--white);
+}

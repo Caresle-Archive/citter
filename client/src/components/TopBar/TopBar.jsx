@@ -1,6 +1,10 @@
 const TopBar = () => {
 	return (
-		<div>Hi</div>
+		<header>
+			<div>Profile picture</div>
+			<div>Logo</div>
+			<div>Star</div>
+		</header>
 	)
 }
 
