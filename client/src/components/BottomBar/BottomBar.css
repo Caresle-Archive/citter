@@ -41,7 +41,7 @@
 	filter: brightness(140%);
 }
 
-.icon-big:hover, .icon-small {
+.icon-big:hover, .icon-small:hover {
 	cursor: pointer;
 }
 
