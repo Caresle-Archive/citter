@@ -1,6 +1,11 @@
 :root {
 	--primary: #c51f5d;
+	--red: #c51f5d;
+	--green: #00ba7c;
 	--white: #fff;
+	--gray: #c2c2c2;
+	--gray-dark: #38444d;
+	--text-gray: #c2c2c2;
 	--hover: #2d3741;
 	--background-color: #243447;
 	--background-color-dark: #141d26;
