@@ -1,6 +1,8 @@
+import './TopBar.css'
+
 const TopBar = () => {
 	return (
-		<header>
+		<header className="top-bar">
 			<div>Profile picture</div>
 			<div>Logo</div>
 			<div>Star</div>

@@ -1,13 +1,15 @@
+import './BottomBar.css'
+
 const BottomBar = () => {
 	return (
-		<nav>
+		<footer className="bottom-bar">
 			<ul>
 				<li>Home</li>
 				<li>Search</li>
 				<li>Notifications</li>
 				<li>Messages</li>
 			</ul>
-		</nav>
+		</footer>
 	)
 }
 

@@ -1,0 +1,7 @@
+.top-bar {
+	background-color: var(--background-color-dark);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 64px;
+}

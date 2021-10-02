@@ -15,6 +15,6 @@ html, body {
 	font-size: 16px;
 	margin: 0;
 	height: 100vh;
-	padding: .25rem;
 	color: var(--white);
+	background-color: var(--background-color);
 }
