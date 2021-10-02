@@ -1,7 +1,7 @@
-import { DotsVerticalIcon } from '@radix-ui/react-icons'
+import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 
 const UserInfoHeader = ({ userData }) => {
-	
+
 	return (
 		<div className="citter-message-user">
 			<img className="img-profile" src="./profile.jpg" alt="profile" />
@@ -10,9 +10,7 @@ const UserInfoHeader = ({ userData }) => {
 				<span>{userData.username}</span>
 				<span>{userData.time}</span>
 			</div>
-			<div className="background-icon-small">
-				<DotsVerticalIcon className="icon-small" />
-			</div>
+			<DotsHorizontalIcon className="icon-small ml-3" />
 		</div>
 	)
 }

@@ -51,6 +51,7 @@
 }
 
 .icon-small {
+	position: sticky;
 	width: 20px;
 	height: 20px;
 }

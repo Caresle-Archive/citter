@@ -1,4 +1,3 @@
-import ButtonCittear from "./ButtonCittear/ButtonCittear.jsx"
 import CitterMessage from "./CitterMessage/CitterMessage.jsx"
 import './ContentContainer.css'
 
@@ -11,6 +10,9 @@ const citterMessage = [
 			time: '19h'
 		},
 		message: 'This is my message',
+		media: {
+			type: 'video'
+		},
 		social: {
 			comments: 4,
 			shares: 0,
@@ -25,6 +27,10 @@ const citterMessage = [
 			time: '20h'
 		},
 		message: 'Message 2',
+		media: {
+			type: 'img',
+			src: './profile.jpg'
+		},
 		social: {
 			comments: 0,
 			shares: 1,
@@ -39,6 +45,10 @@ const citterMessage = [
 			time: '21h'
 		},
 		message: 'Message 3',
+		media: {
+			type: 'video',
+			src: ''
+		},
 		social: {
 			comments: 2,
 			shares: 1,
@@ -53,6 +63,7 @@ const citterMessage = [
 			time: '22h'
 		},
 		message: 'This is the second message with good content',
+		media: {},
 		social: {
 			comments: 0,
 			shares: 0,
@@ -68,7 +79,6 @@ const ContentContainer = () => {
 					return <CitterMessage key={e.id} data={e} />
 				})
 			}
-			<ButtonCittear />
 		</div>
 	)
 }

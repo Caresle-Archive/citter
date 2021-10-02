@@ -1,6 +1,7 @@
 import './CitterMessage.css'
 import SocialMessageInfo from './SocialMessageInfo.jsx'
 import UserInfoHeader from './UserInfoHeader.jsx'
+import MediaCitter from './MediaCitter.jsx'
 
 const CitterMessage = ({ data }) => {
 	return (
@@ -9,6 +10,7 @@ const CitterMessage = ({ data }) => {
 			<p>
 				{data.message}
 			</p>
+			<MediaCitter media={data.media}/>
 			<SocialMessageInfo social={data.social}/>
 		</div>
 	)
