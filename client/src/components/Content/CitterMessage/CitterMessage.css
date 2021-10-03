@@ -1,5 +1,6 @@
 .citter-message-card {
 	border: 1px solid var(--gray-dark);
+	padding: 4px;
 }
 
 .citter-message-user {

@@ -2,7 +2,7 @@ import './MediaCitter.css'
 
 const MediaCitter = ({ media }) => {
 	const { type, src } = media
-	console.log(src)
+	
 	if (src === '' || src === undefined) return ''
 	if (type === 'video') {
 		return  (
