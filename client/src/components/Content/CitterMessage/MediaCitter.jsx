@@ -2,14 +2,18 @@ import './MediaCitter.css'
 
 const MediaCitter = ({ media }) => {
 	const { type, src } = media
+	console.log(src)
+	if (src === '' || src === undefined) return ''
 	if (type === 'video') {
 		return  (
 			<div className="video-media-container">
-				<source src={src} type="video/webm"/>
+				<video autoPlay>
+					<source src={src} type="video/mp4"/>
+				</video>
 			</div>
 		)
 	}
-	if (type === 'img') {
+	if (type === 'img' && src !== '') {
 		return (
 			<div className="img-media-container">
 				<img 

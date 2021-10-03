@@ -10,9 +10,7 @@ const citterMessage = [
 			time: '19h'
 		},
 		message: 'This is my message',
-		media: {
-			type: 'video'
-		},
+		media: {},
 		social: {
 			comments: 4,
 			shares: 0,
@@ -46,8 +44,7 @@ const citterMessage = [
 		},
 		message: 'Message 3',
 		media: {
-			type: 'video',
-			src: ''
+			type: 'video'
 		},
 		social: {
 			comments: 2,
@@ -71,6 +68,7 @@ const citterMessage = [
 		}
 	}
 ]
+
 const ContentContainer = () => {
 	return (
 		<div className="content-container">
