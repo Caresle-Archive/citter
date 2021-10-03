@@ -4,10 +4,10 @@ import {
 	Component1Icon
 } from '@radix-ui/react-icons'
 
-const TopBar = () => {
+const TopBar = ({ showSideBar }) => {
 	return (
 		<header className="top-bar">
-			<img className="img-profile" alt="Profile" src="./profile.jpg"></img>
+			<img onClick={showSideBar} className="img-profile" alt="Profile" src="./profile.jpg"></img>
 			<div className="background-icon">
 				<Component1Icon className="icon-big" />
 			</div>

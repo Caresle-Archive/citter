@@ -6,11 +6,11 @@ import {
 	QuestionMarkCircledIcon
 } from '@radix-ui/react-icons'
 
-const SideBarNav = () => {
+const SideBarNav = ({ showProfile }) => {
 	return (
 		<>
 			<div>
-				<div className="sidebar-flex-center">
+				<div onClick={showProfile} className="sidebar-flex-center">
 					<PersonIcon className="icon-big"/>
 					<span>Profile</span>
 				</div>

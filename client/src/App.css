@@ -11,7 +11,6 @@
 	--background-color-dark: #141d26;
 } 
 
-
 * {
 	font-family: sans-serif;
 	box-sizing: border-box;
@@ -64,4 +63,22 @@ html, body {
 	position: sticky;
 	width: 20px;
 	height: 20px;
+}
+
+.sidebar-profile-picture {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+}
+
+.sidebar-social-stats {
+	display: flex;
+}
+
+.sidebar-social-stats > div {
+	margin-left: 4px;
+}
+
+.sidebar-social-stats > div > span {
+	color: var(--text-gray);
 }

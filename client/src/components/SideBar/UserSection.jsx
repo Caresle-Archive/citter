@@ -1,4 +1,5 @@
 import { CaretDownIcon } from '@radix-ui/react-icons'
+import ProfileStats from './ProfileStats.jsx'
 
 const UserSection = () => {
 	return (
@@ -8,14 +9,7 @@ const UserSection = () => {
 				<span id="user2">@Caresle1</span>
 				<CaretDownIcon id="sidebar-icon" />
 			</div>
-			<div className="sidebar-social-stats">
-				<div>
-					24 <span>Siguiendo</span>
-				</div>
-				<div>
-					19 <span>Seguidores</span>
-				</div>
-			</div>
+			<ProfileStats />
 		</>
 	)
 }

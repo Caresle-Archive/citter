@@ -9,12 +9,6 @@
 	display: none;
 }
 
-.sidebar-profile-picture {
-	width: 64px;
-	height: 64px;
-	border-radius: 50%;
-}
-
 .sidebar-profile-align {
 	display: grid;
 	padding: 4px;
@@ -37,18 +31,6 @@
 	grid-area: icon;
 	display: flex;
 	justify-self: flex-end;
-}
-
-.sidebar-social-stats {
-	display: flex;
-}
-
-.sidebar-social-stats > div {
-	margin-left: 4px;
-}
-
-.sidebar-social-stats > div > span {
-	color: var(--text-gray);
 }
 
 .sidebar-flex-center {
