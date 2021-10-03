@@ -23,4 +23,45 @@ html, body {
 	height: 100vh;
 	color: var(--white);
 	background-color: var(--background-color);
+	overflow: hidden;
+}
+
+.background-icon, .background-icon-small {
+	padding: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.background-icon {
+	width: 40px;
+	height: 40px;
+}
+
+.background-icon-small {
+	width: 30px;
+	height: 30px;
+}
+
+.background-icon:hover, .background-icon-small:hover {
+	background-color: var(--hover);
+	border-radius: 50%;
+	cursor: pointer;
+	color: var(--primary);
+	filter: brightness(140%);
+}
+
+.icon-big:hover, .icon-small:hover {
+	cursor: pointer;
+}
+
+.icon-big {
+	width: 25px;
+	height: 25px;
+}
+
+.icon-small {
+	position: sticky;
+	width: 20px;
+	height: 20px;
 }

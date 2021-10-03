@@ -1,0 +1,63 @@
+.sidebar-container {
+	width: 80%;
+	background-color: var(--background-color-dark);
+	height: 100vh;
+	padding: 4px;
+}
+
+.hide-side-bar {
+	display: none;
+}
+
+.sidebar-profile-picture {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+}
+
+.sidebar-profile-align {
+	display: grid;
+	padding: 4px;
+	margin: 4px 0;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 22px);
+	grid-template-areas: "user1 icon" "user2 .";
+}
+
+#user1 {
+	grid-area: user1;
+}
+
+#user2 {
+	grid-area: user2;
+	color: var(--text-gray);
+}
+
+#sidebar-icon {
+	grid-area: icon;
+	display: flex;
+	justify-self: flex-end;
+}
+
+.sidebar-social-stats {
+	display: flex;
+}
+
+.sidebar-social-stats > div {
+	margin-left: 4px;
+}
+
+.sidebar-social-stats > div > span {
+	color: var(--text-gray);
+}
+
+.sidebar-flex-center {
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+	padding: 4px;
+}
+
+.sidebar-flex-center > span {
+	margin-left: .75rem;
+}

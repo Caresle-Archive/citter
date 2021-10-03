@@ -5,12 +5,21 @@ import BottomBar from "./components/BottomBar/BottomBar.jsx"
 import './App.css'
 
 const App = () => {
+  let render = true
+
+  if (!render) {
+    return (
+      <main>
+        <TopBar />
+        <ContentContainer />
+        <ButtonCittear />
+        <BottomBar />
+      </main>
+    )
+  }
   return (
     <main>
-      <TopBar />
-      <ContentContainer />
-      <ButtonCittear />
-      <BottomBar />
+
     </main>
   )
 }
