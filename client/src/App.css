@@ -25,6 +25,20 @@ html, body {
 	overflow: hidden;
 }
 
+.btn-primary {
+	background-color: var(--primary);
+	color: var(--white);
+	border: 1px solid var(--primary);
+	border-radius: 8px;
+	padding: 4px;
+	font-size: 1.25rem;
+	font-weight: 700;
+	float: right;
+	height: 32px;
+	width: 120px;
+	margin: .25rem 1rem;
+}
+
 .background-icon, .background-icon-small {
 	padding: 4px;
 	display: flex;

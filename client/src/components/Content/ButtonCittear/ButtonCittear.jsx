@@ -1,10 +1,10 @@
 import './ButtonCittear.css'
 import { PlusIcon } from '@radix-ui/react-icons'
 
-const ButtonCittear = () => {
+const ButtonCittear = ({ cittear }) => {
 	return (
 		<div className="btn-container">
-			<button className="btn-round"><PlusIcon className="icon-big" /></button>
+			<button onClick={cittear} className="btn-round"><PlusIcon className="icon-big" /></button>
 		</div>
 	)
 }
