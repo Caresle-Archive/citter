@@ -1,50 +1,77 @@
+// Imports exclusive for this component
+import { useState } from "react"
+import './App.css'
+
+// Import others components
 import TopBar from "./components/TopBar/TopBar.jsx"
 import ContentContainer from "./components/Content/ContentContainer.jsx"
 import ButtonCittear from "./components/Content/ButtonCittear/ButtonCittear.jsx"
 import BottomBar from "./components/BottomBar/BottomBar.jsx"
-import './App.css'
 import ProfilePage from "./components/ProfilePage/ProfilePage.jsx"
 import SideBar from './components/SideBar/SideBar.jsx'
 import NewCitter from "./components/Content/NewCitter/NewCitter.jsx"
-import { useState } from "react"
 
 
 const App = () => {
+  // States for handle the render of the differents part 
+  // of the project
   const [sideBar, setSideBar] = useState(false)
   const [profilePage, setProfilePage] = useState(false)
   const [feed, setFeed] = useState(true)
   const [citterMessage, setCitterMessage] = useState(false)
 
+  /**
+   * Hide the others tabs and allow to render the 
+   * Profile page component
+   */
   const showProfilePage = () => {
     setProfilePage(true)
     setSideBar(false)
     setCitterMessage(false)
   }
 
+  /**
+   * Hid the others tabs and allow to render the
+   * SideBAr component
+   */
   const showSideBar = () => {
     setSideBar(true)
     setFeed(false)
     setCitterMessage(false)
   }
 
+  /**
+   * Do the same that showSideBar & showProfilePage
+   * but for the ContentContainer component
+   */
   const showFeed = () => {
     setFeed(true)
     setProfilePage(false)
     setCitterMessage(false)
   }
 
+  /**
+   * Do the same that the before element
+   * But for NewCitter component
+   */
   const newCitterMessage = () => {
     setFeed(false)
     setProfilePage(false)
     setCitterMessage(true)
   }
 
+  /**
+   * Hide the CitterMessage component
+   */
   const cancelCitterMessage = () => {
     setFeed(true)
     setProfilePage(false)
     setCitterMessage(false)
   }
 
+  /**
+   * Check if the click is inside the side bar or not
+   */
   window.addEventListener('click', (e) => {
     const sideBar = document.getElementById('sidebar')
     if (!sideBar) return

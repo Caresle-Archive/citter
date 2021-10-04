@@ -5,6 +5,11 @@ import {
 	Share1Icon
 } from '@radix-ui/react-icons'
 
+/**
+ * Returns the social part like the number of likes
+ * comments and shares.
+ */
+
 const SocialMessageInfo = ({ social }) => {
 	const comments = (social.comments > 0) ? social.comments : ' '
 	const shares = (social.shares > 0) ? social.shares : ' '

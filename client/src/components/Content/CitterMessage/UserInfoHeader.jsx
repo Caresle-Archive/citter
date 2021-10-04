@@ -1,5 +1,10 @@
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 
+/**
+ * Display the top info of the message
+ * like profile name, username and the time
+ * when the message was send
+ */
 const UserInfoHeader = ({ userData }) => {
 
 	return (

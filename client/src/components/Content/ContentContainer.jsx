@@ -1,6 +1,11 @@
 import CitterMessage from "./CitterMessage/CitterMessage.jsx"
 import './ContentContainer.css'
 
+/**
+ * citterMessage is an array for the content
+ * for each message
+ */
+
 const citterMessage = [
 	{
 		id: 1,
