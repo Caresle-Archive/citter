@@ -74,7 +74,9 @@ const App = () => {
 
   const submit = (e) => {
 		e.preventDefault()
-		addCitter()
+    const message = document.getElementById("citter-message").value
+    console.log(message)
+		addCitter(message)
     setCitterContent([...getFeed()])
 	}
 

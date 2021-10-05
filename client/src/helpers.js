@@ -70,7 +70,7 @@ export const getFeed = () => {
 	return citterMessage
 }
 
-export const addCitter = () => {
+export const addCitter = (message) => {
 	const citter = {
 		id: 0,
 		user: {
@@ -78,7 +78,7 @@ export const addCitter = () => {
 			username: '@Caresle1',
 			time: '1min'
 		},
-		message: 'This is a new citter message',
+		message: message,
 		media: {
 			type: '',
 			src: ''
