@@ -11,6 +11,9 @@ import ProfilePage from "./components/ProfilePage/ProfilePage.jsx"
 import SideBar from './components/SideBar/SideBar.jsx'
 import NewCitter from "./components/Content/NewCitter/NewCitter.jsx"
 
+// import methods
+import { getFeed, addCitter } from './helpers'
+
 
 const App = () => {
   // States for handle the render of the differents part 
@@ -19,7 +22,7 @@ const App = () => {
   const [profilePage, setProfilePage] = useState(false)
   const [feed, setFeed] = useState(true)
   const [citterMessage, setCitterMessage] = useState(false)
-
+  const [citterContent, setCitterContent] = useState([...getFeed()])
   /**
    * Hide the others tabs and allow to render the 
    * Profile page component
@@ -69,6 +72,12 @@ const App = () => {
     setCitterMessage(false)
   }
 
+  const submit = (e) => {
+		e.preventDefault()
+		addCitter()
+    setCitterContent([...getFeed()])
+	}
+
   /**
    * Check if the click is inside the side bar or not
    */
@@ -86,7 +95,7 @@ const App = () => {
     return (
       <main>
         <TopBar showSideBar={showSideBar} />
-        <ContentContainer />
+        <ContentContainer citterMessage={citterContent}/>
         <ButtonCittear cittear={newCitterMessage}/>
         <BottomBar showFeed={showFeed}/>
       </main>
@@ -96,7 +105,7 @@ const App = () => {
   if (citterMessage) {
     return (
       <main>
-        <NewCitter cancelCitter={cancelCitterMessage}/>
+        <NewCitter submitCitter={submit} cancelCitter={cancelCitterMessage}/>
       </main>
     )
   }
@@ -111,6 +120,7 @@ const App = () => {
   return (
     <main>
       <ProfilePage />
+      <ContentContainer citterMessage={citterContent} userProfile={true}/>
       <ButtonCittear />
       <BottomBar showFeed={showFeed}/>
     </main>

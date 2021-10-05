@@ -1,6 +1,6 @@
 # Citter - Twitter clone
 
-A microblogin app. Or just a twitter clone website made with ReactJS, NodeJS and MongoDB
+A microblogging app. Or just a twitter clone website made with ReactJS, NodeJS and MongoDB
 
 ## :wrench: How to install
 

@@ -1,14 +1,15 @@
 import { Cross1Icon } from '@radix-ui/react-icons'
 import './NewCitter.css'
 
-const NewCitter = ({ cancelCitter }) => {
+const NewCitter = ({ cancelCitter, submitCitter }) => {
+	
 	return (
 		<div>
-			<div>
-				<Cross1Icon onClick={cancelCitter} className="icon-big"/>
-				<button className="btn-primary">Cittear</button>
-			</div>
-			<form>
+			<form onSubmit={submitCitter}>
+				<div>
+					<Cross1Icon onClick={cancelCitter} className="icon-big"/>
+					<button className="btn-primary" type="submit">Cittear</button>
+				</div>
 				<textarea
 					className="input-citter"
 					name="citter_message"
@@ -17,7 +18,6 @@ const NewCitter = ({ cancelCitter }) => {
 					rows="10"
 					placeholder="Say something"
 				></textarea>
-
 			</form>
 		</div>
 	)
