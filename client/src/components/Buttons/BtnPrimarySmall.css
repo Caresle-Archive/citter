@@ -6,11 +6,16 @@
 	padding: 4px;
 	font-size: 1rem;
 	font-weight: 700;
-	width: 30%;
+	width: 45%;
+	height: 48px;
 	margin: 0 auto;
 }
 
 .btn-primary-small:hover {
 	cursor: pointer;
 	filter: brightness(125%);
+}
+
+.btn-box-shadow {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

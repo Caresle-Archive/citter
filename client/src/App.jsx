@@ -10,7 +10,7 @@ import BottomBar from "./components/NavBar/BottomBar/BottomBar.jsx"
 import ProfilePage from "./components/ProfilePage/ProfilePage.jsx"
 import SideBar from './components/NavBar/SideBar/SideBar.jsx'
 import NewCitter from "./components/Content/NewCitter/NewCitter.jsx"
-import LoginPage from "./components/Forms/LoginPage"
+import SignUp from "./components/Forms/SignUp.jsx"
 
 // import methods
 import { getFeed, addCitter } from './helpers'
@@ -94,7 +94,7 @@ const App = () => {
     }
   })
   const login = true
-  if (login) return <LoginPage />
+  if (login) return <SignUp />
   if (!sideBar && !profilePage && feed && !citterMessage) {
     return (
       <main>
