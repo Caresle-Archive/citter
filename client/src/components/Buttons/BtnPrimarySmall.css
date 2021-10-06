@@ -1,0 +1,16 @@
+.btn-primary-small {
+	background-color: var(--primary);
+	border: 1px solid var(--primary);
+	border-radius: 6px;
+	color: var(--text-color);
+	padding: 4px;
+	font-size: 1rem;
+	font-weight: 700;
+	width: 30%;
+	margin: 0 auto;
+}
+
+.btn-primary-small:hover {
+	cursor: pointer;
+	filter: brightness(125%);
+}

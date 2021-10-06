@@ -1,4 +1,4 @@
-import ProfileStats from "../SideBar/ProfileStats.jsx"
+import ProfileStats from "../NavBar/SideBar/ProfileStats.jsx"
 import './ProfilePage.css'
 
 const ProfilePage = () => {

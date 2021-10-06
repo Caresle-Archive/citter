@@ -5,11 +5,12 @@ import './App.css'
 // Import others components
 import TopBar from "./components/TopBar/TopBar.jsx"
 import ContentContainer from "./components/Content/ContentContainer.jsx"
-import ButtonCittear from "./components/Content/ButtonCittear/ButtonCittear.jsx"
-import BottomBar from "./components/BottomBar/BottomBar.jsx"
+import BtnCittear from "./components/Buttons/BtnCittear"
+import BottomBar from "./components/NavBar/BottomBar/BottomBar.jsx"
 import ProfilePage from "./components/ProfilePage/ProfilePage.jsx"
-import SideBar from './components/SideBar/SideBar.jsx'
+import SideBar from './components/NavBar/SideBar/SideBar.jsx'
 import NewCitter from "./components/Content/NewCitter/NewCitter.jsx"
+import LoginPage from "./components/Forms/LoginPage"
 
 // import methods
 import { getFeed, addCitter } from './helpers'
@@ -92,13 +93,14 @@ const App = () => {
       setProfilePage(false)
     }
   })
-
+  const login = true
+  if (login) return <LoginPage />
   if (!sideBar && !profilePage && feed && !citterMessage) {
     return (
       <main>
         <TopBar showSideBar={showSideBar} />
         <ContentContainer citterMessage={citterContent}/>
-        <ButtonCittear cittear={newCitterMessage}/>
+        <BtnCittear cittear={newCitterMessage}/>
         <BottomBar showFeed={showFeed}/>
       </main>
     )
@@ -123,7 +125,7 @@ const App = () => {
     <main>
       <ProfilePage />
       <ContentContainer citterMessage={citterContent} userProfile={true}/>
-      <ButtonCittear />
+      <BtnCittear />
       <BottomBar showFeed={showFeed}/>
     </main>
   )

@@ -1,12 +1,12 @@
-import './ButtonCittear.css'
+import './BtnCittear.css'
 import { PlusIcon } from '@radix-ui/react-icons'
 
-const ButtonCittear = ({ cittear }) => {
+const BtnCittear = ({ cittear }) => {
 	return (
-		<div className="btn-container">
+		<div className="btn-cittear-container">
 			<button onClick={cittear} className="btn-round"><PlusIcon className="icon-big" /></button>
 		</div>
 	)
 }
 
-export default ButtonCittear
+export default BtnCittear
