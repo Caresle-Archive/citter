@@ -5,7 +5,9 @@
 	--white: #fff;
 	--gray: #c2c2c2;
 	--gray-dark: #38444d;
+	
 	--text-color: var(--white);
+	--like-color: var(--red);
 	--text-gray: #c2c2c2;
 	--hover: #2d3741;
 	--background-color: #243447;
