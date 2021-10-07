@@ -18,6 +18,14 @@
 	margin-left: 8px;
 }
 
-.icons-like {
+.notification-message > span {
+	font-weight: 700;
+}
+
+.icon-like {
 	color: var(--like-color);
+}
+
+.icon-share {
+	color: var(--share-color);
 }

@@ -4,7 +4,7 @@ const LikeNotification = ({ noti }) => {
 	const { user } = noti
 	return (
 		<div className="card-notification">
-			<div className="card-icons icons-like">
+			<div className="card-icons icon-like">
 				<DoubleArrowUpIcon className="icon-small"/>
 				<img
 					className="img-notification"
@@ -12,7 +12,9 @@ const LikeNotification = ({ noti }) => {
 					alt="profile" 
 				/>
 			</div>
-			<p>{user} Like notification</p>
+			<p className="notification-message">
+				<span>{user}</span> Like notification
+			</p>
 		</div>
 	)
 }
