@@ -1,3 +1,8 @@
+.notification-scroll {
+	overflow: scroll;
+	height: 90vh;
+}
+
 .card-notification {
 	display: flex;
 	flex-direction: column;
