@@ -11,4 +11,6 @@ app.use(cors())
 app.use(express.json())
 app.use(apiRoute)
 
-app.listen(PORT, () => console.log(`Server on port ${PORT}`))
+const server = app.listen(PORT, () => console.log(`Server on port ${PORT}`))
+
+module.exports = { app, server }
