@@ -7,7 +7,7 @@ const NewCitter = ({ cancelCitter, submitCitter }) => {
 		<div>
 			<form onSubmit={submitCitter}>
 				<div>
-					<Cross1Icon onClick={cancelCitter} className="icon-big"/>
+					<Cross1Icon onClick={cancelCitter("feed")} className="icon-big"/>
 					<button className="btn-primary" type="submit">Cittear</button>
 				</div>
 				<textarea

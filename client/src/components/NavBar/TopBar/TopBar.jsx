@@ -7,7 +7,11 @@ import {
 const TopBar = ({ showSideBar }) => {
 	return (
 		<header className="top-bar">
-			<img onClick={showSideBar} className="img-profile" alt="Profile" src="./profile.jpg"></img>
+			<img onClick={showSideBar("sidebar")} 
+				className="img-profile" 
+				alt="Profile" 
+				src="./profile.jpg"
+			></img>
 			<div className="background-icon">
 				<Component1Icon className="icon-big" />
 			</div>

@@ -6,11 +6,11 @@ import {
 	QuestionMarkCircledIcon
 } from '@radix-ui/react-icons'
 
-const SideBarNav = ({ showProfile }) => {
+const SideBarNav = ({ changePage }) => {
 	return (
 		<>
 			<div>
-				<div onClick={showProfile} className="sidebar-flex-center">
+				<div onClick={changePage("profile")} className="sidebar-flex-center">
 					<PersonIcon className="icon-big"/>
 					<span>Profile</span>
 				</div>

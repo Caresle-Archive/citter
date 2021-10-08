@@ -3,7 +3,7 @@ import { useState } from "react"
 import './App.css'
 
 // Import others components
-import TopBar from "./components/TopBar/TopBar.jsx"
+import TopBar from "./components/NavBar/TopBar/TopBar.jsx"
 import ContentContainer from "./components/Content/ContentContainer.jsx"
 import BtnCittear from "./components/Buttons/BtnCittear"
 import BottomBar from "./components/NavBar/BottomBar/BottomBar.jsx"
@@ -16,7 +16,7 @@ import { getFeed, addCitter } from './helpers'
 
 
 const App = () => {
-  const [page] = useState('newCitter')
+  const [page, setPage] = useState('feed')
 
   const [citterContent, setCitterContent] = useState([...getFeed()])
 
@@ -35,24 +35,28 @@ const App = () => {
     const sideBar = document.getElementById('sidebar')
     if (!sideBar) return
     if (sideBar.offsetWidth <= e.offsetX) {
-      console.log('outside')
+      setPage('feed')
     }
   })
+
+  const changePage = nextPage => event => {
+    setPage(nextPage)
+  }
 
   const content = () => {
     if (page === 'feed') {
       return (
         <>
-          <TopBar />
+          <TopBar showSideBar={changePage}/>
           <ContentContainer citterMessage={citterContent} />
-          <BtnCittear />
-          <BottomBar />
+          <BtnCittear cittear={changePage} />
+          <BottomBar changePage={changePage}/>
         </>
       )
     } else if (page === 'sidebar') {
       return (
         <>
-          <SideBar />
+          <SideBar changePage={changePage}/>
         </>
       )
     } else if (page === 'profile') {
@@ -63,21 +67,21 @@ const App = () => {
             userProfile={true}
             citterMessage={citterContent}
           />
-          <BtnCittear />
-          <BottomBar />
+          <BtnCittear cittear={changePage}/>
+          <BottomBar changePage={changePage}/>
         </>
       )
     } else if (page === 'notifications') {
       return (
         <>
           <Notifications />
-          <BottomBar />
+          <BottomBar changePage={changePage}/>
         </>
       )
     } else if (page === 'newCitter') {
       return (
         <>
-          <NewCitter submitCitter={submit} />
+          <NewCitter cancelCitter={changePage} submitCitter={submit} />
         </>
       )
     }

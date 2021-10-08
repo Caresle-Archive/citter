@@ -6,17 +6,17 @@ import {
 	EnvelopeClosedIcon
 } from '@radix-ui/react-icons'
 
-const BottomBar = ({ showFeed }) => {
+const BottomBar = ({ changePage }) => {
 	return (
 		<footer className="bottom-bar">
 			<ul>
-				<li className="background-icon" onClick={showFeed}>
+				<li className="background-icon" onClick={changePage("feed")}>
 					<HomeIcon className="icon-big"/>
 				</li>
 				<li className="background-icon">
 					<MagnifyingGlassIcon className="icon-big"/>
 				</li>
-				<li className="background-icon">
+				<li className="background-icon" onClick={changePage("notifications")}>
 					<BellIcon className="icon-big"/>
 				</li>
 				<li className="background-icon">

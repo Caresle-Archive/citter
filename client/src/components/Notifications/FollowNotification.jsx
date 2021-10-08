@@ -13,7 +13,7 @@ const FollowNotification = ({ noti }) => {
 				/>
 			</div>
 			<p className="notification-message">
-				<span>{user}</span> Comment
+				<span>{user}</span> Follow
 			</p>
 		</div>
 	)

@@ -2,7 +2,7 @@ import UserSection from './UserSection.jsx'
 import SideBarNav from './SideBarNav.jsx'
 import './SideBar.css'
 
-const SideBar = ({ showProfile }) => {
+const SideBar = ({ changePage }) => {
 
 	return (
 		<div id="sidebar" className="sidebar-container">
@@ -10,7 +10,7 @@ const SideBar = ({ showProfile }) => {
 				<img className="sidebar-profile-picture" src="./profile.jpg" alt="User" />
 				<UserSection />
 			</div>
-			<SideBarNav showProfile={showProfile} />
+			<SideBarNav changePage={changePage} />
 		</div>
 	)
 }
