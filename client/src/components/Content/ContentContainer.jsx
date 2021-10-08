@@ -4,6 +4,9 @@ import './ContentContainer.css'
 /**
  * citterMessage is an array for the content
  * for each message
+ * 
+ * userProfile it's a boolean for render only
+ * the citter message from the user
  */
 
 const ContentContainer = ({ userProfile, citterMessage }) => {
