@@ -4,7 +4,8 @@ const route = Router()
 const {
 	getFeed,
 	getAllUsers,
-	getUserByUsername
+	getUserByUsername,
+	createUser
 } = require('../controller/api.controller')
 
 route.get('/', getFeed)
@@ -12,5 +13,7 @@ route.get('/', getFeed)
 route.get('/api/users', getAllUsers)
 
 route.get('/api/users/:username', getUserByUsername)
+
+route.post('/api/users', createUser)
 
 module.exports = route
