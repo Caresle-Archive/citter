@@ -1,6 +1,6 @@
 const NODE_ENV = process.env.NODE_ENV
 const uri = (NODE_ENV === 'test') ? 
-	process.env.MONGO_URI : process.env.MONGO_URI_TEST
+	process.env.MONGO_URI_TEST : process.env.MONGO_URI
 const mongoose = require('mongoose')
 
 main()
