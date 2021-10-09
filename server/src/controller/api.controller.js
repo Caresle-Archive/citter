@@ -1,5 +1,7 @@
 const User = require('../models/user')
 const { badRequest } = require('../helpers/helpers')
+const bcrypt = require('bcrypt')
+const saltRounds = 10
 
 const getFeed = (req, res) => {
 	res.status(200).end()
@@ -21,13 +23,13 @@ const getUserByUsername = async (req, res, next) => {
 }
 
 const createUser = async (req, res, next) => {
-	const { name, username } = req.body
-	
-	if (name === undefined || username === undefined) {
+	const { name, username, password } = req.body
+	let passwordHash
+	if (name === undefined || username === undefined || password === undefined) {
 		return badRequest(res, next)
 	}
 
-	if (name === '' || username === '') {
+	if (name === '' || username === '' || password === '') {
 		return badRequest(res, next)
 	}
 
@@ -36,9 +38,11 @@ const createUser = async (req, res, next) => {
 		return badRequest(res, next)
 	}
 
+	passwordHash = bcrypt.hashSync(password, saltRounds)
 	const response = await User.create({
 		name: name,
-		username: username
+		username: username,
+		password: passwordHash
 	})
 	res.status(201).json(response).end()
 }

@@ -6,8 +6,9 @@ Content-Type: application/json
 
 {
 	"name": "Adrian",
-	"username": "caresle"
+	"username": "caresle123",
+	"password": "12344"
 }
 
 ###
-DELETE http://localhost:3001/api/users/caresle
+DELETE http://localhost:3001/api/users/caresle123

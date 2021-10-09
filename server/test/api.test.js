@@ -43,7 +43,8 @@ describe('POST users', () => {
 			.post('/api/users')
 			.send({
 				name: 'Adrian',
-				username: 'AdrianPSI'
+				username: 'Admin',
+				password: 'admin1234'
 			})
 			.set('Accept', 'application/json')
 			.expect('Content-Type', /application\/json/)
@@ -75,7 +76,8 @@ describe('POST users', () => {
 			.post('/api/users')
 			.send({
 				name: '',
-				username: 'UsernameTest'
+				username: 'UsernameTest',
+				password: '1234'
 			})
 			.set('Accept', 'application/json')
 			.expect(400)
@@ -86,24 +88,37 @@ describe('POST users', () => {
 			.post('/api/users')
 			.send({
 				name: 'dani',
-				username: ''
+				username: '',
+				password: '1234'
 			})
 			.set('Accept', 'application/json')
 			.expect(400)
 	})
 
 	test('Duplicated username', async () => {
-		const username = users[0].username
+		const { username, password } = users[0]
 		await api
 			.post('/api/users')
 			.send({
 				name: 'Charlie',
-				username: username
+				username: username,
+				password: password
 			})
 			.set('Accept', 'application/json')
 			.expect(400)
 	})
 
+	test('Password valid', async () => {
+		await api
+			.post('/api/users')
+			.send({
+				name: 'root',
+				username: 'root1',
+				password: '12345'
+			})
+			.set('Accept', 'application/json')
+			.expect(201)
+	})
 })
 
 describe('DELETE', () => {

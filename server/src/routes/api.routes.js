@@ -1,5 +1,4 @@
-const { Router } = require('express')
-const route = Router()
+const route = require('express').Router()
 
 const {
 	getFeed,
@@ -19,4 +18,5 @@ route.post('/api/users', createUser)
 
 route.delete('/api/users/:username', deleteUser)
 route.delete('/api/users/', deleteUser)
+
 module.exports = route
