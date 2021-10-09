@@ -43,9 +43,26 @@ const createUser = async (req, res, next) => {
 	res.status(201).json(response).end()
 }
 
+const deleteUser = async (req, res, next) => {
+	const { username } = req.params
+
+	if (username === '' || username === undefined) {
+		res.status(400).end()
+		return next()
+	}
+
+	const response = await User.findOneAndDelete({username: username})
+	if (response) {
+		res.status(204).end()
+		return next()
+	}
+	res.status(200).end()
+}
+
 module.exports = {
 	getFeed,
 	getAllUsers,
 	getUserByUsername,
-	createUser
+	createUser,
+	deleteUser
 }

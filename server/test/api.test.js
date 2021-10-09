@@ -106,6 +106,22 @@ describe('POST users', () => {
 
 })
 
+describe('DELETE', () => {
+	test('By username', async () => {
+		const username = users[0].username
+		await api
+			.delete(`/api/users/${username}`)
+			.expect(204)
+	})
+
+	test('No username pass', async () => {
+		const username = ''
+		await api
+			.delete(`/api/users/${username}`)
+			.expect(400)
+	})
+})
+
 afterAll(async () => {
 	const client = mongoose.connection.getClient()
 	await client.close()
