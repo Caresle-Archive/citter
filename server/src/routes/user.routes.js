@@ -6,7 +6,7 @@ const {
 	getUserByUsername,
 	createUser,
 	deleteUser
-} = require('../controller/api.controller')
+} = require('../controller/user.controller')
 
 route.get('/', getFeed)
 

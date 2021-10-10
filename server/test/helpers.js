@@ -12,7 +12,7 @@ const users = [
 	{
 		name: 'RRRRR',
 		username: '5r5',
-		passowrd: 'Nice'
+		password: 'Nice'
 	}
 ]
 
