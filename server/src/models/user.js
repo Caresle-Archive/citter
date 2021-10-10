@@ -6,6 +6,7 @@ const userSchema = new Schema({
 	password: String
 })
 
+// Remove _id and __v to the returned object
 userSchema.set('toJSON', {
 	transform: (doc, ret) => {
 		ret.id = ret._id

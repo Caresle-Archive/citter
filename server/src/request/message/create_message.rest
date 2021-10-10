@@ -1,0 +1,16 @@
+POST http://localhost:3001/message
+Content-Type: application/json
+
+{
+	"username": "Caresle",
+	"message": "This is a message",
+	"media": {
+		"typeMedia": "video",
+		"src": "1"
+	},
+	"social": {
+		"comments": 0,
+		"shares": 1,
+		"likes": 2
+	}
+}
