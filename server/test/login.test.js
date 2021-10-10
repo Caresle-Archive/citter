@@ -24,7 +24,7 @@ describe('Login', () => {
 	test('valid user', async () => {
 		const { username, password } = users[0]
 		await api
-			.get('/login')
+			.post('/login')
 			.send({
 				username: username,
 				password: password
@@ -36,7 +36,7 @@ describe('Login', () => {
 	test('empty password', async () => {
 		const { username } = users[0]
 		await api
-			.get('/login')
+			.post('/login')
 			.send({
 				username: username,
 				password: ''
@@ -48,7 +48,7 @@ describe('Login', () => {
 	test('only user pass', async () => {
 		const { username } = users[0]
 		await api
-			.get('/login')
+			.post('/login')
 			.send({
 				username: username
 			})
@@ -60,7 +60,7 @@ describe('Login', () => {
 		const { username } = users[0]
 		const { password } = users[1]
 		await api
-			.get('/login')
+			.post('/login')
 			.send({
 				username: username,
 				password: password

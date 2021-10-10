@@ -1,5 +1,9 @@
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+const TOKEN_SECRET = 
+	(process.env.NODE_ENV === 'test') 
+		? 'secret' : process.env.TOKEN_SECRET
 
 const checkLogin = async (req, res, next) => {
 	const { username, password } = req.body
@@ -12,7 +16,17 @@ const checkLogin = async (req, res, next) => {
 		res.status(404).end()
 		return next()
 	}
-	res.status(200).end()
+
+	const userForToken = {
+		id: response._id,
+		username: response.username
+	}
+	const token = jwt.sign(userForToken, TOKEN_SECRET)
+
+	res.status(200).send({
+		username: response.username,
+		token: token
+	}).end()
 }
 
 module.exports = {
