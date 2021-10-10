@@ -18,19 +18,19 @@ beforeEach(async () => {
 describe('GET for users', () => {
 
 	test('All users', async () => {
-		const response = await api.get('/api/users')
+		const response = await api.get('/users')
 		expect(response.body.length).toBe(users.length)
 	})
 
 	test('By username', async () => {
 		const { username } = users[0]
-		const response = await api.get(`/api/users/${username}`)
+		const response = await api.get(`/users/${username}`)
 		expect(response.status).toBe(302)
 	})
 
 	test('Not found user', async () => {
 		const username = 'qqqaacc'
-		const response = await api.get(`/api/users/${username}`)
+		const response = await api.get(`/users/${username}`)
 		expect(response.status).toBe(404)
 	})
 
@@ -40,7 +40,7 @@ describe('POST users', () => {
 
 	test('Valid user', async () => {
 		await api
-			.post('/api/users')
+			.post('/users')
 			.send({
 				name: 'Adrian',
 				username: 'Admin',
@@ -53,7 +53,7 @@ describe('POST users', () => {
 
 	test('Only username send', async () => {
 		await api
-			.post('/api/users')
+			.post('/users')
 			.send({
 				username: 'UsernameTest'
 			})
@@ -63,7 +63,7 @@ describe('POST users', () => {
 
 	test('Only name send', async () => {
 		await api
-			.post('/api/users')
+			.post('/users')
 			.send({
 				name: 'Carlos'
 			})
@@ -73,7 +73,7 @@ describe('POST users', () => {
 
 	test('Send empty string name', async () => {
 		await api
-			.post('/api/users')
+			.post('/users')
 			.send({
 				name: '',
 				username: 'UsernameTest',
@@ -85,7 +85,7 @@ describe('POST users', () => {
 
 	test('Send empty string username', async () => {
 		await api
-			.post('/api/users')
+			.post('/users')
 			.send({
 				name: 'dani',
 				username: '',
@@ -98,7 +98,7 @@ describe('POST users', () => {
 	test('Duplicated username', async () => {
 		const { username, password } = users[0]
 		await api
-			.post('/api/users')
+			.post('/users')
 			.send({
 				name: 'Charlie',
 				username: username,
@@ -110,7 +110,7 @@ describe('POST users', () => {
 
 	test('Password valid', async () => {
 		await api
-			.post('/api/users')
+			.post('/users')
 			.send({
 				name: 'root',
 				username: 'root1',
@@ -125,14 +125,14 @@ describe('DELETE', () => {
 	test('By username', async () => {
 		const username = users[0].username
 		await api
-			.delete(`/api/users/${username}`)
+			.delete(`/users/${username}`)
 			.expect(204)
 	})
 
 	test('No username pass', async () => {
 		const username = ''
 		await api
-			.delete(`/api/users/${username}`)
+			.delete(`/users/${username}`)
 			.expect(400)
 	})
 })

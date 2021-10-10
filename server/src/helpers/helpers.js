@@ -1,6 +1,5 @@
-const badRequest = (res, next) => {
-	res.status(400).end()
-	return next()
+const badRequest = (res) => {
+	return res.status(400).end()
 }
 
 module.exports = { badRequest }

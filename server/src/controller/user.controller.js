@@ -12,30 +12,29 @@ const getAllUsers = async (req, res) => {
 	res.json(data).status(200).end()
 }
 
-const getUserByUsername = async (req, res, next) => {
+const getUserByUsername = async (req, res) => {
 	const username = req.params.username
 	const user = await User.find({username: username})
 	if (user.length <= 0) {
-		res.status(404).end()
-		return next()
+		return res.status(404).end()
 	}
 	res.status(302).json(user).end()
 }
 
-const createUser = async (req, res, next) => {
+const createUser = async (req, res) => {
 	const { name, username, password } = req.body
 	let passwordHash
 	if (name === undefined || username === undefined || password === undefined) {
-		return badRequest(res, next)
+		return badRequest(res)
 	}
 
 	if (name === '' || username === '' || password === '') {
-		return badRequest(res, next)
+		return badRequest(res)
 	}
 
 	const found = await User.findOne({username: username})
 	if (found !== null) {
-		return badRequest(res, next)
+		return badRequest(res)
 	}
 
 	passwordHash = bcrypt.hashSync(password, saltRounds)
@@ -47,18 +46,16 @@ const createUser = async (req, res, next) => {
 	res.status(201).json(response).end()
 }
 
-const deleteUser = async (req, res, next) => {
+const deleteUser = async (req, res) => {
 	const { username } = req.params
 
 	if (username === '' || username === undefined) {
-		res.status(400).end()
-		return next()
+		return res.status(400).end()
 	}
 
 	const response = await User.findOneAndDelete({username: username})
 	if (response) {
-		res.status(204).end()
-		return next()
+		return res.status(204).end()
 	}
 	res.status(200).end()
 }

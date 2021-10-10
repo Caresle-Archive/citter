@@ -10,13 +10,13 @@ const {
 
 route.get('/', getFeed)
 
-route.get('/api/users', getAllUsers)
+route.get('/users', getAllUsers)
 
-route.get('/api/users/:username', getUserByUsername)
+route.get('/users/:username', getUserByUsername)
 
-route.post('/api/users', createUser)
+route.post('/users', createUser)
 
-route.delete('/api/users/:username', deleteUser)
-route.delete('/api/users/', deleteUser)
+route.delete('/users/:username', deleteUser)
+route.delete('/users/', deleteUser)
 
 module.exports = route

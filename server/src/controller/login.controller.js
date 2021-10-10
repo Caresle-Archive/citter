@@ -5,16 +5,14 @@ const TOKEN_SECRET =
 	(process.env.NODE_ENV === 'test') 
 		? 'secret' : process.env.TOKEN_SECRET
 
-const checkLogin = async (req, res, next) => {
+const checkLogin = async (req, res) => {
 	const { username, password } = req.body
 	const response = await User.findOne({username: username})
 	if (!response || password === '' || password === undefined) {
-		res.status(404).end()
-		return next()
+		return res.status(404).end()
 	}
 	if (!bcrypt.compareSync(password, response.password)) {
-		res.status(404).end()
-		return next()
+		return res.status(404).end()
 	}
 
 	const userForToken = {
