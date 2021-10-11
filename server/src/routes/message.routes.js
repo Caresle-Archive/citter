@@ -5,8 +5,11 @@ const {
 	deleteMessage
 } = require('../controller/message.controller')
 
+const userExtractor = require('../middleware/userExtractor')
+
+
 route.get('/message', getAllMessages)
-route.post('/message', createMessage)
-route.delete('/message/:id', deleteMessage)
+route.post('/message', userExtractor, createMessage)
+route.delete('/message/:id', userExtractor, deleteMessage)
 
 module.exports = route
