@@ -1,4 +1,6 @@
-const citterMessage = [
+import axios from 'axios'
+
+let citterMessage = [
 	{
 		id: 1,
 		user: {
@@ -66,8 +68,8 @@ const citterMessage = [
 	}
 ]
 
-export const getFeed = () => {
-	return citterMessage
+export const getFeed = (url) => {
+	return axios.get(`${url}/message`).then(data => data)
 }
 
 export const addCitter = (message) => {

@@ -24,7 +24,7 @@ const App = () => {
   const [page, setPage] = useState('login')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [citterContent, setCitterContent] = useState([...getFeed()])
+  const [citterContent, setCitterContent] = useState([])
   const [user, setUser] = useState() 
 
   const submit = (e) => {
@@ -75,6 +75,8 @@ const App = () => {
   const content = () => {
     if (user && page === 'login') {
       setPage('feed')
+      getFeed(url).then(({data}) => setCitterContent([...data]))
+      
     }
     if (page === 'feed') {
       return (

@@ -11,12 +11,13 @@ import MediaCitter from './MediaCitter.jsx'
 const CitterMessage = ({ data }) => {
 	return (
 		<div className="citter-message-card">
-			<UserInfoHeader userData={data.user}/>
+			hi
+			{/* <UserInfoHeader userData={data.user}/>
 			<p>
 				{data.message}
 			</p>
 			<MediaCitter media={data.media}/>
-			<SocialMessageInfo social={data.social}/>
+			<SocialMessageInfo social={data.social}/> */}
 		</div>
 	)
 }
