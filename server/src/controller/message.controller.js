@@ -11,9 +11,9 @@ const createMessage = async (req, res) => {
 	const response = await Message.create({
 		idUser: req.userId,
 		username: req.username,
-		message: message,
-		media: media,
-		social: social
+		message,
+		media,
+		social
 	})
 	res.status(200).json(response).end()
 }

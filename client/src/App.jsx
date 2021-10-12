@@ -11,14 +11,21 @@ import ProfilePage from "./components/ProfilePage/ProfilePage.jsx"
 import SideBar from './components/NavBar/SideBar/SideBar.jsx'
 import NewCitter from "./components/Content/NewCitter/NewCitter.jsx"
 import Notifications from "./components/Notifications/Notifications.jsx"
+import LoginPage from './components/Forms/LoginPage.jsx'
+
 // import methods
 import { getFeed, addCitter } from './helpers'
+import axios from 'axios'
 
+const url = 'http://localhost:3001'
+const localStorage = window.localStorage
 
 const App = () => {
-  const [page, setPage] = useState('feed')
-
+  const [page, setPage] = useState('login')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const [citterContent, setCitterContent] = useState([...getFeed()])
+  const [user, setUser] = useState() 
 
   const submit = (e) => {
 		e.preventDefault()
@@ -43,7 +50,32 @@ const App = () => {
     setPage(nextPage)
   }
 
+  const handleOnChange = (state, value) => {
+    if (state === 'username') {
+      setUsername(value)
+    }
+    if (state === 'password') {
+      setPassword(value)
+    }
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    axios.post(`${url}/login`, {
+      username,
+      password
+    })
+    .then(response => {
+      setUser(response.data)
+      localStorage.setItem('token', response.data.token)
+    })
+    .catch(error => console.log(error))
+  }
+
   const content = () => {
+    if (user && page === 'login') {
+      setPage('feed')
+    }
     if (page === 'feed') {
       return (
         <>
@@ -82,6 +114,15 @@ const App = () => {
       return (
         <>
           <NewCitter cancelCitter={changePage} submitCitter={submit} />
+        </>
+      )
+    } else if (page === 'login') {
+      return (
+        <>
+          <LoginPage 
+            handleSubmit={handleLogin}
+            handleOnChange={handleOnChange}
+          />
         </>
       )
     }

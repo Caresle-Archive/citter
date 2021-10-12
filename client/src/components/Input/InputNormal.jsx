@@ -1,6 +1,6 @@
 import './InputNormal.css'
 
-const InputNormal = ({type, placeholder, id, name}) => {
+const InputNormal = ({type, placeholder, id, name, onChange}) => {
 	return (
 		<input 
 			className="input-normal"
@@ -8,6 +8,7 @@ const InputNormal = ({type, placeholder, id, name}) => {
 			placeholder={placeholder} 
 			id={id}
 			name={name}
+			onChange={onChange}
 			required
 		/>
 	)

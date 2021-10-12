@@ -23,7 +23,7 @@ const checkLogin = async (req, res) => {
 
 	res.status(200).send({
 		username: response.username,
-		token: token
+		token
 	}).end()
 }
 
