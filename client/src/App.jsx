@@ -1,5 +1,5 @@
 // Imports exclusive for this component
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import './App.css'
 
 // Import others components
@@ -26,6 +26,11 @@ const App = () => {
   const [password, setPassword] = useState('')
   const [citterContent, setCitterContent] = useState([])
   const [user, setUser] = useState() 
+
+  useEffect(() => {
+    axios.get(`${url}/message`)
+      .then(response => setCitterContent([...response.data]))
+  }, [])
 
   const submit = (e) => {
 		e.preventDefault()
@@ -75,14 +80,12 @@ const App = () => {
   const content = () => {
     if (user && page === 'login') {
       setPage('feed')
-      getFeed(url).then(({data}) => setCitterContent([...data]))
-      
     }
     if (page === 'feed') {
       return (
         <>
           <TopBar showSideBar={changePage}/>
-          <ContentContainer citterMessage={citterContent} />
+          <ContentContainer citterMessage={citterContent} url={url}/>
           <BtnCittear cittear={changePage} />
           <BottomBar changePage={changePage}/>
         </>

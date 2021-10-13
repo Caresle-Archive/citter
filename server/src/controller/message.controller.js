@@ -10,6 +10,7 @@ const createMessage = async (req, res) => {
 	
 	const response = await Message.create({
 		idUser: req.userId,
+		name: req.name,
 		username: req.username,
 		message,
 		media,

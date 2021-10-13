@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose')
 
 const messageSchema = new Schema({
 	idUser: String,
+	name: String,
 	username: String,
 	message: String,
 	media: {

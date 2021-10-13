@@ -11,13 +11,14 @@ module.exports = (req, res, next) => {
 	
 	const decodedToken = jwt.verify(token, TOKEN_SECRET)
 	
-	if (!decodedToken.id || !decodedToken.username || !token) {
+	if (!decodedToken.id || !decodedToken.username || !token || !decodedToken.name) {
 		return res.status(401).json({error: 'token missing or invalid'}).end()
 	}
 
-	const { id: userId, username } = decodedToken
+	const { id: userId, name, username } = decodedToken
 
 	req.userId = userId
+	req.name = name
 	req.username = username
 
 	next()

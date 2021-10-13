@@ -1,6 +1,6 @@
 POST http://localhost:3001/message
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjIzZmE5MjY2OWU2NjU3Nzc5M2NjYSIsInVzZXJuYW1lIjoiY2FyZXNsZTEyMyIsImlhdCI6MTYzMzkwODcyMX0.xu0yZakS1NhVm4mZSD8lmI8D1CyAkPL0ZEnWJDYLc2E
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjIzZmE5MjY2OWU2NjU3Nzc5M2NjYSIsIm5hbWUiOiJBZHJpYW4iLCJ1c2VybmFtZSI6ImNhcmVzbGUxMjMiLCJpYXQiOjE2MzQxNDA4NzB9.d9IaxbgrnPaLu6q7TZo5Xl-6T4lOin1rUsE6iBH7mBY
 
 {
 	"message": "This is a message",

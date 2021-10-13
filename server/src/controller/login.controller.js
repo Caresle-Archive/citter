@@ -14,9 +14,10 @@ const checkLogin = async (req, res) => {
 	if (!bcrypt.compareSync(password, response.password)) {
 		return res.status(404).end()
 	}
-
+	
 	const userForToken = {
 		id: response._id,
+		name: response.name,
 		username: response.username
 	}
 	const token = jwt.sign(userForToken, TOKEN_SECRET)
