@@ -28,6 +28,28 @@ const App = () => {
 		e.preventDefault()
     const message = document.getElementById("citter-message").value
     console.log(message, localStorage.getItem('token'))
+    if (!message) {
+      return
+    }
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    }
+    const obj = {
+      message,
+      media: {
+        typeUrl: '',
+        src: ''
+      },
+      social: {
+        comments: 0,
+        shares: 0,
+        likes: 0
+      }
+    }
+    axios.post(`${url}/message`, obj, config)
+      .then(response => console.log(response))
 	}
 
   /**
@@ -71,6 +93,7 @@ const App = () => {
     <main>
       <PageControl 
         page={page}
+        user={user}
         changePage={changePage}
         citterContent={citterContent}
         url={url}

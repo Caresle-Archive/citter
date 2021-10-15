@@ -11,6 +11,7 @@ import LoginPage from './Forms/LoginPage.jsx'
 const PageControl = (props) => {
 	const {
 		page,
+		user,
 		changePage,
 		citterContent,
 		url,
@@ -19,6 +20,17 @@ const PageControl = (props) => {
 		handleLogin,
 		handleOnChange
 	} = props
+	
+	if (!user) {
+		return (
+			<>
+				<LoginPage
+					handleSubmit={handleLogin}
+					handleOnChange={handleOnChange}
+				/>
+			</>
+		)
+	}
 	if (page === 'feed') {
 		return (
 			<>
@@ -61,15 +73,6 @@ const PageControl = (props) => {
 				cancelCitter={changePage}
 				submitCitter={newCitter}
 			/>
-		)
-	} else if (page === 'login') {
-		return (
-			<>
-				<LoginPage
-					handleSubmit={handleLogin}
-					handleOnChange={handleOnChange}
-				/>
-			</>
 		)
 	}
 
