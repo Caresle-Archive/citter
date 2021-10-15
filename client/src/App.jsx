@@ -3,15 +3,7 @@ import { useState, useEffect } from "react"
 import './App.css'
 
 // Import others components
-import TopBar from "./components/NavBar/TopBar/TopBar.jsx"
-import ContentContainer from "./components/Content/ContentContainer.jsx"
-import BtnCittear from "./components/Buttons/BtnCittear"
-import BottomBar from "./components/NavBar/BottomBar/BottomBar.jsx"
-import ProfilePage from "./components/ProfilePage/ProfilePage.jsx"
-import SideBar from './components/NavBar/SideBar/SideBar.jsx'
-import NewCitter from "./components/Content/NewCitter/NewCitter.jsx"
-import Notifications from "./components/Notifications/Notifications.jsx"
-import LoginPage from './components/Forms/LoginPage.jsx'
+import PageControl from "./components/PageControl.jsx"
 
 // import methods
 import { getFeed, addCitter } from './helpers'
@@ -21,7 +13,7 @@ const url = 'http://localhost:3001'
 const localStorage = window.localStorage
 
 const App = () => {
-  const [page, setPage] = useState('login')
+  const [page, setPage] = useState('feed')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [citterContent, setCitterContent] = useState([])
@@ -32,12 +24,10 @@ const App = () => {
       .then(response => setCitterContent([...response.data]))
   }, [])
 
-  const submit = (e) => {
+  const newCitter = (e) => {
 		e.preventDefault()
     const message = document.getElementById("citter-message").value
-    console.log(message)
-		addCitter(message)
-    setCitterContent([...getFeed()])
+    console.log(message, localStorage.getItem('token'))
 	}
 
   /**
@@ -77,65 +67,18 @@ const App = () => {
     .catch(error => console.log(error))
   }
 
-  const content = () => {
-    if (user && page === 'login') {
-      setPage('feed')
-    }
-    if (page === 'feed') {
-      return (
-        <>
-          <TopBar showSideBar={changePage}/>
-          <ContentContainer citterMessage={citterContent} url={url}/>
-          <BtnCittear cittear={changePage} />
-          <BottomBar changePage={changePage}/>
-        </>
-      )
-    } else if (page === 'sidebar') {
-      return (
-        <>
-          <SideBar changePage={changePage}/>
-        </>
-      )
-    } else if (page === 'profile') {
-      return (
-        <>
-          <ProfilePage />
-          <ContentContainer 
-            userProfile={true}
-            citterMessage={citterContent}
-          />
-          <BtnCittear cittear={changePage}/>
-          <BottomBar changePage={changePage}/>
-        </>
-      )
-    } else if (page === 'notifications') {
-      return (
-        <>
-          <Notifications />
-          <BottomBar changePage={changePage}/>
-        </>
-      )
-    } else if (page === 'newCitter') {
-      return (
-        <>
-          <NewCitter cancelCitter={changePage} submitCitter={submit} />
-        </>
-      )
-    } else if (page === 'login') {
-      return (
-        <>
-          <LoginPage 
-            handleSubmit={handleLogin}
-            handleOnChange={handleOnChange}
-          />
-        </>
-      )
-    }
-  }
-
   return (
     <main>
-      {content()}
+      <PageControl 
+        page={page}
+        changePage={changePage}
+        citterContent={citterContent}
+        url={url}
+        userProfile={false}
+        newCitter={newCitter}
+        handleLogin={handleLogin}
+        handleOnChange={handleOnChange}
+      />
     </main>
   )
 }
