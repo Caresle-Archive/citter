@@ -20,7 +20,7 @@ const PageControl = (props) => {
 		handleLogin,
 		handleOnChange
 	} = props
-	
+
 	if (!user) {
 		return (
 			<>
@@ -52,6 +52,7 @@ const PageControl = (props) => {
 			<>
 				<ProfilePage />
 				<ContentContainer
+					user={user}
 					userProfile={userProfile}
 					citterMessage={citterContent}
 				/>

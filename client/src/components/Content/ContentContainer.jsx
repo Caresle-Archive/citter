@@ -9,16 +9,17 @@ import './ContentContainer.css'
  * the citter message from the user
  */
 
-const ContentContainer = ({ userProfile, citterMessage}) => {
-	console.log(citterMessage)
+const ContentContainer = ({ user, userProfile, citterMessage}) => {
+	let citterContent = []
+
 	if (userProfile) {
+		citterContent = citterMessage.filter(e => e.username === user.username)
 		return (
 			<div className="content-container">
-				<h2>User</h2>
 				{
-					// citterContent.map(e => {
-					// 	return <CitterMessage key={e.id} data={e} />
-					// })
+					citterContent.map(e => {
+						return <CitterMessage key={e.id} data={e} />
+					})
 				}
 			</div>
 		)

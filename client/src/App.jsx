@@ -6,7 +6,6 @@ import './App.css'
 import PageControl from "./components/PageControl.jsx"
 
 // import methods
-import { getFeed, addCitter } from './helpers'
 import axios from 'axios'
 
 const url = 'http://localhost:3001'
@@ -18,7 +17,7 @@ const App = () => {
   const [password, setPassword] = useState('')
   const [citterContent, setCitterContent] = useState([])
   const [user, setUser] = useState() 
-
+  const [userProfile, setUserProfile] = useState(false)
   useEffect(() => {
     axios.get(`${url}/message`)
       .then(response => setCitterContent([...response.data]))
@@ -26,8 +25,8 @@ const App = () => {
 
   const newCitter = (e) => {
 		e.preventDefault()
-    const message = document.getElementById("citter-message").value
-    console.log(message, localStorage.getItem('token'))
+    const textArea = document.getElementById("citter-message")
+    const message = textArea.value
     if (!message) {
       return
     }
@@ -49,7 +48,8 @@ const App = () => {
       }
     }
     axios.post(`${url}/message`, obj, config)
-      .then(response => console.log(response))
+      .then(({data}) => setCitterContent([...citterContent, data]))
+    textArea.value = ''
 	}
 
   /**
@@ -64,6 +64,8 @@ const App = () => {
   })
 
   const changePage = nextPage => event => {
+    if (nextPage === 'profile') setUserProfile(true)
+    else setUserProfile(false)
     setPage(nextPage)
   }
 
@@ -97,7 +99,7 @@ const App = () => {
         changePage={changePage}
         citterContent={citterContent}
         url={url}
-        userProfile={false}
+        userProfile={userProfile}
         newCitter={newCitter}
         handleLogin={handleLogin}
         handleOnChange={handleOnChange}
