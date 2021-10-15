@@ -18,6 +18,7 @@ const App = () => {
   const [citterContent, setCitterContent] = useState([])
   const [user, setUser] = useState() 
   const [userProfile, setUserProfile] = useState(false)
+  
   useEffect(() => {
     axios.get(`${url}/message`)
       .then(response => setCitterContent([...response.data]))

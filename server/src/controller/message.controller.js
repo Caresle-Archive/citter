@@ -19,9 +19,34 @@ const createMessage = async (req, res) => {
 	res.status(200).json(response).end()
 }
 
+const updateStatsMessage = async (req, res) => {
+	const id = req.params.id
+	const {like, share, comment} = req.body
+	
+	if(!like && !share && !comment) {
+		return res.status(204).end()
+	}
+
+	const response = await Message.findById(id)
+	const socialData = response.social
+	if (like) {
+		socialData.likes++
+	}
+
+	if (share) {
+		socialData.shares++
+	}
+	
+	if (comment) {
+		socialData.comments++
+	}
+
+	const update = await Message.findByIdAndUpdate(id, {social: socialData}, {new: true})
+	res.status(200).json(update).end()
+}
+
 const deleteMessage = async (req, res) => {
 	const id = req.params.id
-
 	await Message.findByIdAndDelete(id)
 	res.status(204).end()
 }
@@ -29,5 +54,6 @@ const deleteMessage = async (req, res) => {
 module.exports = { 
 	getAllMessages,
 	createMessage,
+	updateStatsMessage,
 	deleteMessage
 }

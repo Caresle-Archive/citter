@@ -1,0 +1,8 @@
+POST http://localhost:3001/message/616704694b7a018cb217a4eb
+Content-Type: application/json
+
+{
+	"like": true,
+	"share": true,
+	"comment": false
+}
