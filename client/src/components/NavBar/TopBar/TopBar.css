@@ -1,7 +1,7 @@
 .top-bar {
 	background-color: var(--background-color-dark);
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: center;
 	height: 10vh;
 }
@@ -10,6 +10,10 @@
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
+}
+
+header > .img-profile {
+	margin-left: 1rem;
 }
 
 .img-profile:hover {

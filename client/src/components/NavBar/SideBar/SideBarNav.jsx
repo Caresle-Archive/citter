@@ -1,7 +1,5 @@
 import {
 	PersonIcon,
-	BookmarkIcon,
-	HamburgerMenuIcon,
 	GearIcon,
 	QuestionMarkCircledIcon
 } from '@radix-ui/react-icons'
@@ -10,26 +8,18 @@ const SideBarNav = ({ changePage }) => {
 	return (
 		<>
 			<div>
-				<div onClick={changePage("profile")} className="sidebar-flex-center">
+				<div onClick={changePage("profile")} className="sidebar-flex-center sidebar-item">
 					<PersonIcon className="icon-big"/>
 					<span>Profile</span>
-				</div>
-				<div className="sidebar-flex-center">
-					<HamburgerMenuIcon className="icon-big"/>
-					<span>Lists</span>
-				</div>
-				<div className="sidebar-flex-center">
-					<BookmarkIcon className="icon-big"/>
-					<span>Bookmarks</span>
 				</div>
 			</div>
 			
 			<div>
-				<div className="sidebar-flex-center">
+				<div className="sidebar-flex-center sidebar-item">
 					<GearIcon className="icon-big"/>
 					<span>Settings and privacy</span>
 				</div>
-				<div className="sidebar-flex-center">
+				<div className="sidebar-flex-center sidebar-item">
 					<QuestionMarkCircledIcon className="icon-big"/>
 					<span>Help Center</span>
 				</div>

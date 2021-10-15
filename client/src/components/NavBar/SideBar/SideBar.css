@@ -3,6 +3,7 @@
 	background-color: var(--background-color-dark);
 	height: 100vh;
 	padding: 4px;
+	box-shadow: var(--background-color-dark) 0px 2px 8px 0px;
 }
 
 .hide-side-bar {
@@ -16,6 +17,19 @@
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 22px);
 	grid-template-areas: "user1 icon" "user2 .";
+}
+
+.sidebar-item {
+	padding: 4px;
+	transition: background-color .1s ease-out;
+	border-radius: 4px;
+}
+
+.sidebar-item:hover {
+	cursor: pointer;
+	background-color: var(--background-color);
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	filter: brightness(120%);
 }
 
 #user1 {

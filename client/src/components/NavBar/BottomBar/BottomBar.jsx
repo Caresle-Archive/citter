@@ -1,9 +1,7 @@
 import './BottomBar.css'
 import { 
 	HomeIcon,
-	MagnifyingGlassIcon,
-	BellIcon,
-	EnvelopeClosedIcon
+	BellIcon
 } from '@radix-ui/react-icons'
 
 const BottomBar = ({ changePage }) => {
@@ -13,14 +11,8 @@ const BottomBar = ({ changePage }) => {
 				<li className="background-icon" onClick={changePage("feed")}>
 					<HomeIcon className="icon-big"/>
 				</li>
-				<li className="background-icon">
-					<MagnifyingGlassIcon className="icon-big"/>
-				</li>
 				<li className="background-icon" onClick={changePage("notifications")}>
 					<BellIcon className="icon-big"/>
-				</li>
-				<li className="background-icon">
-					<EnvelopeClosedIcon className="icon-big"/>
 				</li>
 			</ul>
 		</footer>
