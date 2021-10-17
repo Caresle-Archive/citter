@@ -9,7 +9,12 @@ import './ContentContainer.css'
  * the citter message from the user
  */
 
-const ContentContainer = ({ user, userProfile, citterMessage}) => {
+const ContentContainer = ({ 
+	user, 
+	userProfile,
+	citterMessage, 
+	handleSocial
+}) => {
 	let citterContent = []
 
 	if (userProfile) {
@@ -18,7 +23,7 @@ const ContentContainer = ({ user, userProfile, citterMessage}) => {
 			<div className="content-container">
 				{
 					citterContent.map(e => {
-						return <CitterMessage key={e.id} data={e} />
+						return <CitterMessage key={e.id} data={e} onSocial={handleSocial}/>
 					})
 				}
 			</div>
@@ -29,7 +34,7 @@ const ContentContainer = ({ user, userProfile, citterMessage}) => {
 		<div className="content-container">
 			{
 				citterMessage.map(e => {
-					return <CitterMessage key={e.id} data={e} />
+					return <CitterMessage key={e.id} idKey={e.id} data={e} onSocial={handleSocial} />
 				})
 			}
 		</div>

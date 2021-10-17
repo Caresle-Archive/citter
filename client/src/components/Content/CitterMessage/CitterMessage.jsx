@@ -8,9 +8,9 @@ import MediaCitter from './MediaCitter.jsx'
  * @param {Object} data 
  * @returns 
  */
-const CitterMessage = ({ data }) => {
+const CitterMessage = ({ idKey, data, onSocial }) => {
 	return (
-		<div className="citter-message-card">
+		<div id={idKey} className="citter-message-card">
 			<UserInfoHeader 
 				username={data.username}
 				name={data.name}
@@ -19,7 +19,7 @@ const CitterMessage = ({ data }) => {
 				{data.message}
 			</p>
 			<MediaCitter media={data.media}/>
-			<SocialMessageInfo social={data.social}/>
+			<SocialMessageInfo onSocial={onSocial} social={data.social}/>
 		</div>
 	)
 }

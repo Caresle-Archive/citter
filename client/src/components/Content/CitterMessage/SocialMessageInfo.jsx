@@ -9,7 +9,7 @@ import {
  * comments and shares.
  */
 
-const SocialMessageInfo = ({ social }) => {
+const SocialMessageInfo = ({ onSocial, social }) => {
 	const comments = (social.comments > 0) ? social.comments : ' '
 	const shares = (social.shares > 0) ? social.shares : ' '
 	const likes = (social.likes > 0) ? social.likes : ' '
@@ -29,12 +29,12 @@ const SocialMessageInfo = ({ social }) => {
 				<span>{comments}</span>
 			</div>
 			<div className={classesShare}>
-				<UpdateIcon className="icon-small"/>
+				<UpdateIcon onClick={onSocial("share")} className="icon-small"/>
 				<span>{shares}</span>
 			</div>
 
-			<div className={classesLikes}>
-				<DoubleArrowUpIcon className="icon-small"/>
+			<div className={classesLikes} >
+				<DoubleArrowUpIcon onClick={onSocial("like")} className="icon-small"/>
 				<span>{likes}</span>
 			</div>
 		</div>

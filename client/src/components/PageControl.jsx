@@ -19,9 +19,11 @@ const PageControl = (props) => {
 		newCitter,
 		handleLogin,
 		handleOnChange,
-		handleSignup
+		handleSignup,
+		onSocialInteraction
 	} = props
 
+	
 	if (!user && page === 'login') {
 		return (
 			<>
@@ -47,6 +49,7 @@ const PageControl = (props) => {
 				<ContentContainer 
 					citterMessage={citterContent} 
 					url={url}
+					handleSocial={onSocialInteraction}
 				/>
 				<BtnCittear cittear={changePage} />
 				<BottomBar changePage={changePage} />

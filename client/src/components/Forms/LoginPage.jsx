@@ -2,7 +2,7 @@ import BtnPrimarySmall from "../Buttons/BtnPrimarySmall"
 import InputNormal from "../Input/InputNormal"
 import './Form.css'
 
-const LoginPage = ({ handleSubmit, handleOnChange }) => {
+const LoginPage = ({ handleSubmit, handleOnChange, changePage }) => {
 	return (
 		<div className="form-container">
 			<form className="form-card" onSubmit={handleSubmit}>
@@ -21,6 +21,13 @@ const LoginPage = ({ handleSubmit, handleOnChange }) => {
 					onChange={({target}) => handleOnChange('password', target.value)}
 					/>
 				<BtnPrimarySmall boxShadow={true} text="Login" type={"submit"} />
+				<button 
+					onClick={changePage("signup")}
+					type="button"
+					className="btn-primary-out-small btn-form btn-box-shadow"
+				>
+					Sign up
+				</button>
 			</form>
 		</div>
 	)

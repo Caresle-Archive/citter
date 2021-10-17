@@ -38,6 +38,10 @@
 	align-items: center;
 }
 
+.icon-small:hover {
+	background-color: var(--gray-dark);
+}
+
 .social-item > span {
 	margin-left: 8px;
 }

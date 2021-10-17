@@ -25,13 +25,19 @@ const SignUp = ({ changePage, onSubmit }) => {
 					name="passwordInput2"
 				/>
 				<BtnPrimarySmall boxShadow={true} text="Sign up" type={"submit"} />
-				<BtnPrimarySmall
+				{/* <BtnPrimarySmall
 					outline={true}
 					boxShadow={true}
 					text="Login"
 					type="button"
-				/>
-				{/* <button onClick={changePage("login")} type="button">login</button> */}
+				/> */}
+				<button 
+					onClick={changePage("login")}
+					type="button"
+					className="btn-primary-out-small btn-form btn-box-shadow"
+				>
+					login
+				</button>
 			</form>
 		</div>
 	)
