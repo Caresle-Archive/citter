@@ -1,15 +1,10 @@
-import './BtnPrimarySmall.css'
+// import './BtnPrimarySmall.css'
 
-const BtnPrimarySmall = ({text, type, boxShadow, click, outline}) => {
-	let classList = (outline) ? 
-		"btn-primary-out-small btn-form" : "btn-primary-small btn-form"
-	classList = (boxShadow) ?
-		`${classList} btn-box-shadow` : classList
-	
+const BtnPrimarySmall = ({className, text, type, click}) => {
 	return (
 		<button
 			onClick={click}
-			className={classList}
+			className={className}
 			type={type}
 		>
 			{text}

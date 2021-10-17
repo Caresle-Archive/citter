@@ -1,4 +1,4 @@
-import BtnPrimarySmall from "../Buttons/BtnPrimarySmall"
+import BtnStyled from "../Buttons/BtnStyled"
 import InputNormal from "../Input/InputNormal"
 import './Form.css'
 
@@ -20,14 +20,13 @@ const LoginPage = ({ handleSubmit, handleOnChange, changePage }) => {
 					name="passwordInput"
 					onChange={({target}) => handleOnChange('password', target.value)}
 					/>
-				<BtnPrimarySmall boxShadow={true} text="Login" type={"submit"} />
-				<button 
-					onClick={changePage("signup")}
-					type="button"
-					className="btn-primary-out-small btn-form btn-box-shadow"
-				>
-					Sign up
-				</button>
+				<BtnStyled btnForm boxShadow 
+					text="Login" type="submit"
+				/>
+				<BtnStyled btnForm boxShadow outline
+					text="Signup" type="button"
+					click={changePage("signup")}
+				/>
 			</form>
 		</div>
 	)
