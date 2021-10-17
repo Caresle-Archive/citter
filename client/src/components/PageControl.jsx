@@ -5,8 +5,8 @@ import BottomBar from './NavBar/BottomBar/BottomBar.jsx'
 import SideBar from './NavBar/SideBar/SideBar.jsx'
 import ProfilePage from './ProfilePage/ProfilePage.jsx'
 import NewCitter from './Content/NewCitter/NewCitter.jsx'
-import Notifications from './Notifications/Notifications.jsx'
 import LoginPage from './Forms/LoginPage.jsx'
+import SignUp from './Forms/SignUp.jsx'
 
 const PageControl = (props) => {
 	const {
@@ -18,17 +18,26 @@ const PageControl = (props) => {
 		userProfile,
 		newCitter,
 		handleLogin,
-		handleOnChange
+		handleOnChange,
+		handleSignup
 	} = props
 
-	if (!user) {
+	if (!user && page === 'login') {
 		return (
 			<>
 				<LoginPage
 					handleSubmit={handleLogin}
 					handleOnChange={handleOnChange}
+					changePage={changePage}
 				/>
 			</>
+		)
+	} else if (!user && page === 'signup'){
+		return (
+			<SignUp
+				changePage={changePage}
+				onSubmit={handleSignup}
+			/>
 		)
 	}
 	if (page === 'feed') {
@@ -60,14 +69,6 @@ const PageControl = (props) => {
 				<BottomBar changePage={changePage} />
 			</>
 		)
-	} else if (page === 'notifications') {
-		return (
-			<>
-				<Notifications />
-				<BottomBar changePage={changePage} />
-			</>
-		)
-
 	} else if (page === 'newCitter') {
 		return (
 			<NewCitter 
@@ -76,7 +77,6 @@ const PageControl = (props) => {
 			/>
 		)
 	}
-
 	return (
 		<h1>return</h1>
 	)

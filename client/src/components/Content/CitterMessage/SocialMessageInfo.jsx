@@ -1,8 +1,7 @@
 import { 
 	ChatBubbleIcon,
 	UpdateIcon,
-	DoubleArrowUpIcon,
-	Share1Icon
+	DoubleArrowUpIcon
 } from '@radix-ui/react-icons'
 
 /**
@@ -37,10 +36,6 @@ const SocialMessageInfo = ({ social }) => {
 			<div className={classesLikes}>
 				<DoubleArrowUpIcon className="icon-small"/>
 				<span>{likes}</span>
-			</div>
-
-			<div>
-				<Share1Icon className="icon-small"/>
 			</div>
 		</div>
 	)

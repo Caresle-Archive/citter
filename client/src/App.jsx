@@ -12,7 +12,7 @@ const url = 'http://localhost:3001'
 const localStorage = window.localStorage
 
 const App = () => {
-  const [page, setPage] = useState('feed')
+  const [page, setPage] = useState('signup')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [citterContent, setCitterContent] = useState([])
@@ -87,9 +87,43 @@ const App = () => {
     })
     .then(response => {
       setUser(response.data)
+      setPage("feed")
       localStorage.setItem('token', response.data.token)
     })
     .catch(error => console.log(error))
+  }
+
+  const handleSignup = (e) => {
+    e.preventDefault()
+
+    const formChilds = document.querySelector('form').childNodes
+    const newUser = {
+      name: '',
+      username: '',
+      password: '',
+      password2: ''
+    }
+
+    for (let i = 0; i <= 2; i++) {
+      if (formChilds[i].tagName === 'INPUT') {
+        if (i === 0) newUser.username = formChilds[i].value
+        if (i === 1) newUser.password = formChilds[i].value
+        if (i === 2) newUser.password2 = formChilds[i].value
+      }
+    }
+    newUser.name = newUser.username
+    if (newUser.password !== newUser.password2) {
+      alert('Password doesn\'t match')
+      return
+    }
+
+    axios.post(`${url}/users`, newUser)
+      .then(response => {
+        if (response.status === 201) {
+          setPage('login')
+        }
+      })
+      .catch(err => console.log(err))
   }
 
   return (
@@ -104,6 +138,7 @@ const App = () => {
         newCitter={newCitter}
         handleLogin={handleLogin}
         handleOnChange={handleOnChange}
+        handleSignup={handleSignup}
       />
     </main>
   )

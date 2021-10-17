@@ -1,19 +1,15 @@
 import './BtnPrimarySmall.css'
 
-const BtnPrimarySmall = ({text, type, boxShadow}) => {
-	if (boxShadow) {
-		return (
-			<button
-				className="btn-primary-small btn-box-shadow"
-				type={type}
-			>
-				{text}
-			</button>
-		)
-	}
+const BtnPrimarySmall = ({text, type, boxShadow, click, outline}) => {
+	let classList = (outline) ? 
+		"btn-primary-out-small btn-form" : "btn-primary-small btn-form"
+	classList = (boxShadow) ?
+		`${classList} btn-box-shadow` : classList
+	
 	return (
-		<button 
-			className="btn-primary-small"
+		<button
+			onClick={click}
+			className={classList}
 			type={type}
 		>
 			{text}

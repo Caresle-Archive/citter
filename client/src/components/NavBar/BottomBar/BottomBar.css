@@ -5,14 +5,14 @@
 	position: absolute;
 	bottom: 0;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 }
 
 .bottom-bar > ul {
 	list-style: none;
 	display: grid;
-	margin-right: 1rem;
+	margin-left: 2rem;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 3rem;
 }

@@ -1,7 +1,6 @@
 import './BottomBar.css'
 import { 
-	HomeIcon,
-	BellIcon
+	HomeIcon
 } from '@radix-ui/react-icons'
 
 const BottomBar = ({ changePage }) => {
@@ -10,9 +9,6 @@ const BottomBar = ({ changePage }) => {
 			<ul>
 				<li className="background-icon" onClick={changePage("feed")}>
 					<HomeIcon className="icon-big"/>
-				</li>
-				<li className="background-icon" onClick={changePage("notifications")}>
-					<BellIcon className="icon-big"/>
 				</li>
 			</ul>
 		</footer>

@@ -1,17 +1,27 @@
-.btn-primary-small {
-	background-color: var(--primary);
-	border: 1px solid var(--primary);
-	border-radius: 6px;
-	color: var(--text-color);
+.btn-form {
 	padding: 4px;
 	font-size: 1rem;
 	font-weight: 700;
 	width: 45%;
 	height: 48px;
-	margin: 0 auto;
+	margin: .25rem auto;
 }
 
-.btn-primary-small:hover {
+.btn-primary-small {
+	background-color: var(--primary);
+	border: 1px solid var(--primary);
+	border-radius: 6px;
+	color: var(--text-color);
+}
+
+.btn-primary-out-small {
+	background-color: var(--white);
+	border: 1px solid var(--primary);
+	border-radius: 6px;
+	color: var(--primary);
+}
+
+.btn-primary-small:hover, .btn-primary-out-small:hover {
 	cursor: pointer;
 	filter: brightness(125%);
 }
