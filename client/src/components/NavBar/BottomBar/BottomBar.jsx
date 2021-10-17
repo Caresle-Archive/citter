@@ -1,13 +1,12 @@
-import './BottomBar.css'
 import { 
 	HomeIcon
 } from '@radix-ui/react-icons'
 
-const BottomBar = ({ changePage }) => {
+const BottomBar = ({ className, changePage }) => {
 	return (
-		<footer className="bottom-bar">
+		<footer className={className}>
 			<ul>
-				<li className="background-icon" onClick={changePage("feed")}>
+				<li onClick={changePage("feed")}>
 					<HomeIcon className="icon-big"/>
 				</li>
 			</ul>

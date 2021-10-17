@@ -1,5 +1,3 @@
-// import './BtnPrimarySmall.css'
-
 const BtnPrimarySmall = ({className, text, type, click}) => {
 	return (
 		<button

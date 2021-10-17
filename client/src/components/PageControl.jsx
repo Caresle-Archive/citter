@@ -1,12 +1,15 @@
 import TopBar from './NavBar/TopBar/TopBar.jsx'
 import ContentContainer from './Content/ContentContainer.jsx'
-import BtnCittear from './Buttons/BtnCittear.jsx'
-import BottomBar from './NavBar/BottomBar/BottomBar.jsx'
+// import BottomBar from './NavBar/BottomBar/BottomBar.jsx'
 import SideBar from './NavBar/SideBar/SideBar.jsx'
 import ProfilePage from './ProfilePage/ProfilePage.jsx'
 import NewCitter from './Content/NewCitter/NewCitter.jsx'
 import LoginPage from './Forms/LoginPage.jsx'
 import SignUp from './Forms/SignUp.jsx'
+
+// Styled Components
+import BottomBarStyled from './NavBar/BottomBar/BottomBarStyled.js'
+import BtnRound from './Buttons/BtnRound.js'
 
 const PageControl = (props) => {
 	const {
@@ -51,8 +54,8 @@ const PageControl = (props) => {
 					url={url}
 					handleSocial={onSocialInteraction}
 				/>
-				<BtnCittear cittear={changePage} />
-				<BottomBar changePage={changePage} />
+				<BtnRound boxShadow cittear={changePage} />
+				<BottomBarStyled changePage={changePage} />
 			</>
 		)
 	} else if (page === 'sidebar') {
@@ -68,8 +71,8 @@ const PageControl = (props) => {
 					userProfile={userProfile}
 					citterMessage={citterContent}
 				/>
-				<BtnCittear cittear={changePage} />
-				<BottomBar changePage={changePage} />
+				<BtnRound cittear={changePage} />
+				<BottomBarStyled changePage={changePage} />
 			</>
 		)
 	} else if (page === 'newCitter') {
