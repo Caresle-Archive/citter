@@ -1,9 +1,9 @@
-import './InputNormal.css'
+// import './InputNormal.css'
 
-const InputNormal = ({type, placeholder, id, name, onChange}) => {
+const InputNormal = ({className, type, placeholder, id, name, onChange}) => {
 	return (
 		<input 
-			className="input-normal"
+			className={className}
 			type={type}
 			placeholder={placeholder} 
 			id={id}

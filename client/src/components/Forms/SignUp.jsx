@@ -1,24 +1,24 @@
-import InputNormal from '../Input/InputNormal'
+import InputNormalStyled from '../Input/InputNormalStyled'
 import BtnStyled from '../Buttons/BtnStyled'
-import './Form.css'
+import BasicFormStyled from './BasicFormStyled'
 
 const SignUp = ({ changePage, onSubmit }) => {
 	return (
-		<div className="form-container">
+		<BasicFormStyled>
 			<form className="form-card" onSubmit={onSubmit}>
-				<InputNormal
+				<InputNormalStyled
 					type="text"
 					placeholder="Username" 
 					id="username-input"
 					name="usernameInput"
 				/>
-				<InputNormal
+				<InputNormalStyled
 					type="password"
 					placeholder="Password"
 					id="password-input"
 					name="passwordInput"
 				/>
-				<InputNormal
+				<InputNormalStyled
 					type="password"
 					placeholder="Repeat password"
 					id="password-input-2"
@@ -33,7 +33,7 @@ const SignUp = ({ changePage, onSubmit }) => {
 					click={changePage("login")}
 				/>
 			</form>
-		</div>
+		</BasicFormStyled>
 	)
 }
 

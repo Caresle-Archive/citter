@@ -1,19 +1,19 @@
 import BtnStyled from "../Buttons/BtnStyled"
-import InputNormal from "../Input/InputNormal"
-import './Form.css'
+import InputNormalStyled from "../Input/InputNormalStyled.js"
+import BasicFormStyled from "./BasicFormStyled"
 
 const LoginPage = ({ handleSubmit, handleOnChange, changePage }) => {
 	return (
-		<div className="form-container">
+		<BasicFormStyled>
 			<form className="form-card" onSubmit={handleSubmit}>
-				<InputNormal
+				<InputNormalStyled
 					type="text"
 					placeholder="Username" 
 					id="username-input"
 					name="usernameInput"
 					onChange={({target}) => handleOnChange('username', target.value)}
 					/>
-				<InputNormal
+				<InputNormalStyled
 					type="password"
 					placeholder="Password"
 					id="password-input"
@@ -28,7 +28,7 @@ const LoginPage = ({ handleSubmit, handleOnChange, changePage }) => {
 					click={changePage("signup")}
 				/>
 			</form>
-		</div>
+		</BasicFormStyled>
 	)
 }
 
