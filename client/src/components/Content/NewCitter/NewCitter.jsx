@@ -1,10 +1,9 @@
 import { Cross1Icon } from '@radix-ui/react-icons'
-import './NewCitter.css'
 
-const NewCitter = ({ cancelCitter, submitCitter }) => {
+const NewCitter = ({ className, cancelCitter, submitCitter }) => {
 	
 	return (
-		<div>
+		<div className={className}>
 			<form onSubmit={submitCitter}>
 				<div>
 					<Cross1Icon onClick={cancelCitter("feed")} className="icon-big"/>

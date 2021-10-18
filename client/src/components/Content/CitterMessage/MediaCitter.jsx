@@ -1,5 +1,3 @@
-import './MediaCitter.css'
-
 // Component for add the media to the message
 const MediaCitter = ({ media }) => {
 	const { type, src } = media

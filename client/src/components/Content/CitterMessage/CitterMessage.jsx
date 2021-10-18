@@ -1,4 +1,4 @@
-import './CitterMessage.css'
+// import './CitterMessage.css'
 import SocialMessageInfo from './SocialMessageInfo.jsx'
 import UserInfoHeader from './UserInfoHeader.jsx'
 import MediaCitter from './MediaCitter.jsx'
@@ -8,9 +8,9 @@ import MediaCitter from './MediaCitter.jsx'
  * @param {Object} data 
  * @returns 
  */
-const CitterMessage = ({ idKey, data, onSocial }) => {
+const CitterMessage = ({ className, idKey, data, onSocial }) => {
 	return (
-		<div id={idKey} className="citter-message-card">
+		<div id={idKey} className={className}>
 			<UserInfoHeader 
 				username={data.username}
 				name={data.name}

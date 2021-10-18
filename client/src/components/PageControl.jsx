@@ -1,6 +1,4 @@
-import ContentContainer from './Content/ContentContainer.jsx'
 import ProfilePage from './ProfilePage/ProfilePage.jsx'
-import NewCitter from './Content/NewCitter/NewCitter.jsx'
 import LoginPage from './Forms/LoginPage.jsx'
 import SignUp from './Forms/SignUp.jsx'
 
@@ -9,6 +7,8 @@ import BottomBarStyled from './NavBar/BottomBar/BottomBarStyled.js'
 import BtnRound from './Buttons/BtnRound.js'
 import TopBarStyled from './NavBar/TopBar/TopBarStyled.js'
 import SideBarStyled from './NavBar/SideBar/SideBarStyled.js'
+import ContentStyled from './Content/ContentStyled.js'
+import NewCitterStyled from './Content/NewCitter/NewCitterStyled.js'
 
 const PageControl = (props) => {
 	const {
@@ -48,7 +48,7 @@ const PageControl = (props) => {
 		return (
 			<>
 				<TopBarStyled showSideBar={changePage} />
-				<ContentContainer 
+				<ContentStyled
 					citterMessage={citterContent} 
 					url={url}
 					handleSocial={onSocialInteraction}
@@ -65,7 +65,7 @@ const PageControl = (props) => {
 		return (
 			<>
 				<ProfilePage />
-				<ContentContainer
+				<ContentStyled
 					user={user}
 					userProfile={userProfile}
 					citterMessage={citterContent}
@@ -76,7 +76,7 @@ const PageControl = (props) => {
 		)
 	} else if (page === 'newCitter') {
 		return (
-			<NewCitter 
+			<NewCitterStyled
 				cancelCitter={changePage}
 				submitCitter={newCitter}
 			/>

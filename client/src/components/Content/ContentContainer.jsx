@@ -1,5 +1,4 @@
-import CitterMessage from "./CitterMessage/CitterMessage.jsx"
-import './ContentContainer.css'
+import CitterMessageStyled from "./CitterMessage/CitterMessageStyled"
 
 /**
  * citterMessage is an array for the content
@@ -10,6 +9,7 @@ import './ContentContainer.css'
  */
 
 const ContentContainer = ({ 
+	className,
 	user, 
 	userProfile,
 	citterMessage, 
@@ -20,10 +20,10 @@ const ContentContainer = ({
 	if (userProfile) {
 		citterContent = citterMessage.filter(e => e.username === user.username)
 		return (
-			<div className="content-container">
+			<div className={className}>
 				{
 					citterContent.map(e => {
-						return <CitterMessage key={e.id} data={e} onSocial={handleSocial}/>
+						return <CitterMessageStyled key={e.id} data={e} onSocial={handleSocial}/>
 					})
 				}
 			</div>
@@ -31,10 +31,10 @@ const ContentContainer = ({
 	}
 	
 	return (
-		<div className="content-container">
+		<div className={className}>
 			{
 				citterMessage.map(e => {
-					return <CitterMessage key={e.id} idKey={e.id} data={e} onSocial={handleSocial} />
+					return <CitterMessageStyled key={e.id} idKey={e.id} data={e} onSocial={handleSocial} />
 				})
 			}
 		</div>
