@@ -1,13 +1,12 @@
 import UserSection from './UserSection.jsx'
 import SideBarNav from './SideBarNav.jsx'
-import './SideBar.css'
 
-const SideBar = ({ changePage }) => {
+const SideBar = ({ className, changePage }) => {
 
 	return (
-		<div id="sidebar" className="sidebar-container">
+		<div id="sidebar" className={className}>
 			<div>
-				<img className="sidebar-profile-picture" src="./profile.jpg" alt="User" />
+				<img src="./profile.jpg" alt="User" />
 				<UserSection />
 			</div>
 			<SideBarNav changePage={changePage} />

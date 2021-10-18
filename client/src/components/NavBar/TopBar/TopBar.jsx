@@ -1,10 +1,7 @@
-import './TopBar.css'
-
-const TopBar = ({ showSideBar }) => {
+const TopBar = ({ className, showSideBar }) => {
 	return (
-		<header className="top-bar">
+		<header className={className}>
 			<img onClick={showSideBar("sidebar")} 
-				className="img-profile" 
 				alt="Profile" 
 				src="./profile.jpg"
 			></img>

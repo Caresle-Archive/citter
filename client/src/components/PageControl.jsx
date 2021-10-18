@@ -1,7 +1,4 @@
-import TopBar from './NavBar/TopBar/TopBar.jsx'
 import ContentContainer from './Content/ContentContainer.jsx'
-// import BottomBar from './NavBar/BottomBar/BottomBar.jsx'
-import SideBar from './NavBar/SideBar/SideBar.jsx'
 import ProfilePage from './ProfilePage/ProfilePage.jsx'
 import NewCitter from './Content/NewCitter/NewCitter.jsx'
 import LoginPage from './Forms/LoginPage.jsx'
@@ -10,6 +7,8 @@ import SignUp from './Forms/SignUp.jsx'
 // Styled Components
 import BottomBarStyled from './NavBar/BottomBar/BottomBarStyled.js'
 import BtnRound from './Buttons/BtnRound.js'
+import TopBarStyled from './NavBar/TopBar/TopBarStyled.js'
+import SideBarStyled from './NavBar/SideBar/SideBarStyled.js'
 
 const PageControl = (props) => {
 	const {
@@ -48,7 +47,7 @@ const PageControl = (props) => {
 	if (page === 'feed') {
 		return (
 			<>
-				<TopBar showSideBar={changePage} />
+				<TopBarStyled showSideBar={changePage} />
 				<ContentContainer 
 					citterMessage={citterContent} 
 					url={url}
@@ -60,7 +59,7 @@ const PageControl = (props) => {
 		)
 	} else if (page === 'sidebar') {
 		return (
-			<SideBar changePage={changePage} />
+			<SideBarStyled boxShadow changePage={changePage} />
 		)
 	} else if (page === 'profile') {
 		return (
