@@ -3,6 +3,7 @@ import {
 	UpdateIcon,
 	DoubleArrowUpIcon
 } from '@radix-ui/react-icons'
+import IconSmallStyled from '../../IconButtons/IconSmallStyled'
 
 /**
  * Returns the social part like the number of likes
@@ -25,17 +26,21 @@ const SocialMessageInfo = ({ onSocial, social }) => {
 	return (
 		<div className="social-info-container">
 			<div className="social-item">
-				<ChatBubbleIcon className="icon-small" />
-				<span>{comments}</span>
+				<IconSmallStyled>
+					<ChatBubbleIcon />
+					<span>{comments}</span>
+				</IconSmallStyled>
 			</div>
 			<div className={classesShare}>
-				<UpdateIcon onClick={onSocial("share")} className="icon-small"/>
-				<span>{shares}</span>
+				<IconSmallStyled onClick={onSocial("share")}>
+					<UpdateIcon />
+				</IconSmallStyled>
 			</div>
 
 			<div className={classesLikes} >
-				<DoubleArrowUpIcon onClick={onSocial("like")} className="icon-small"/>
-				<span>{likes}</span>
+				<IconSmallStyled onClick={onSocial("like")}>
+					<DoubleArrowUpIcon />
+				</IconSmallStyled>
 			</div>
 		</div>
 	)

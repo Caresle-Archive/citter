@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, boxShadow } from '../../theme'
+import { colors, boxShadow, breakpoints } from '../../theme'
 
 const BasicFormStyled = styled.div`
 	display: flex;
@@ -17,6 +17,11 @@ const BasicFormStyled = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		box-shadow: ${boxShadow.small};
+	}
+
+	@media only screen and (min-width: ${breakpoints.desktop}) {
+		width: 900px;
+		margin: 2rem auto;
 	}
 `
 

@@ -1,3 +1,7 @@
+export const breakpoints = {
+	desktop: '1440px'
+}
+
 export const colors = {
 	primary: '#c51f5d',
 	share: '#00ba7c',
