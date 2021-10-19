@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from "../../../theme"
+import { colors, breakpoints } from "../../../theme"
 import TopBar from "./TopBar.jsx"
 
 const TopBarStyled = styled(TopBar)`
@@ -15,6 +15,10 @@ const TopBarStyled = styled(TopBar)`
 		border-radius: 50%;
 		margin-left: 1rem;
 		cursor: pointer;
+	}
+
+	@media only screen and (min-width: ${breakpoints.desktop}) {
+		display: none;
 	}
 `
 

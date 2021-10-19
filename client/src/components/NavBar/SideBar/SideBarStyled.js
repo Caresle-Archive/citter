@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, boxShadow } from '../../../theme'
+import { colors, boxShadow, breakpoints } from '../../../theme'
 import SideBar from './SideBar.jsx'
 
 const SideBarStyled = styled(SideBar)`
@@ -76,6 +76,12 @@ const SideBarStyled = styled(SideBar)`
 		background-color: ${colors.background};
 		filter: brightness(120%);
 		box-shadow: ${boxShadow.roundButton};
+	}
+
+	@media only screen and (min-width: ${breakpoints.desktop}) {
+		width: 300px;
+		position: absolute;
+		top: 0;
 	}
 `
 

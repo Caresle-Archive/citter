@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from "../../../theme"
+import { colors, breakpoints } from "../../../theme"
 import CitterMessage from './CitterMessage.jsx'
 
 const CitterMessageStyled = styled(CitterMessage)`
@@ -90,6 +90,12 @@ const CitterMessageStyled = styled(CitterMessage)`
 		& .ml-3 {
 			margin-left: 3rem;
 		}
+	}
+
+	@media only screen and (min-width: ${breakpoints.desktop}) {
+		margin: 0 auto;
+		width: 700px;
+		font-size: 1.25rem;
 	}
 `
 

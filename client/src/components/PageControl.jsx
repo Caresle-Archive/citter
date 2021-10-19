@@ -10,6 +10,8 @@ import SideBarStyled from './NavBar/SideBar/SideBarStyled.js'
 import ContentStyled from './Content/ContentStyled.js'
 import NewCitterStyled from './Content/NewCitter/NewCitterStyled.js'
 
+import { breakpoints } from '../theme.js'
+
 const PageControl = (props) => {
 	const {
 		page,
@@ -45,6 +47,21 @@ const PageControl = (props) => {
 		)
 	}
 	if (page === 'feed') {
+		const desktop = breakpoints.desktop.replace('px', '')
+		if (window.innerWidth === parseInt(desktop)) {
+			return (
+				<>
+					<ContentStyled
+						citterMessage={citterContent} 
+						url={url}
+						handleSocial={onSocialInteraction}
+					/>
+					<SideBarStyled boxShadow changePage={changePage} />
+					<BtnRound boxShadow cittear={changePage} />
+				</>
+			)
+		}
+		
 		return (
 			<>
 				<TopBarStyled showSideBar={changePage} />

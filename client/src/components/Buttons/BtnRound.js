@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors, boxShadow } from "../../theme"
+import { colors, boxShadow, breakpoints } from "../../theme"
 import BtnCittear from "./BtnCittear.jsx"
 
 const BtnRound = styled(BtnCittear)`
@@ -26,6 +26,15 @@ const BtnRound = styled(BtnCittear)`
 		bottom: 12vh;
 		margin-right: 4px;
 		cursor: pointer;
+	}
+
+	@media only screen and (min-width: ${breakpoints.desktop}) {
+		& > button {
+			width: 80px;
+			height: 80px;
+			bottom: 3vh;
+			right: 3vh;
+		}
 	}
 `
 

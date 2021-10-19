@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from "../../../theme"
+import { colors, breakpoints } from "../../../theme"
 import BottomBar from "./BottomBar.jsx"
 
 const BottomBarStyled = styled(BottomBar)`
@@ -35,6 +35,10 @@ const BottomBarStyled = styled(BottomBar)`
 		border-radius: 50%;
 		color: ${colors.primary};
 		filter: brightness(140%);
+	}
+
+	@media only screen and (min-width: ${breakpoints.desktop}) {
+		display: none;
 	}
 `
 

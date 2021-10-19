@@ -4,6 +4,7 @@ import {
 } from '@radix-ui/react-icons'
 
 const SideBarNav = ({ changePage }) => {
+	
 	return (
 		<>
 			<div>
