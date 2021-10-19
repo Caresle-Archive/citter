@@ -19,9 +19,57 @@ const BasicFormStyled = styled.div`
 		box-shadow: ${boxShadow.small};
 	}
 
+	& #button-signup, & #button-login {
+		display: flex;
+		justify-content: center;
+	}
+
 	@media only screen and (min-width: ${breakpoints.desktop}) {
 		width: 900px;
 		margin: 2rem auto;
+
+		& .form-card {
+			height: 60vh;
+		}
+
+		& .form-signup {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(4, 10vh);
+			grid-template-areas: "username-input username-input"
+			"password-input password-input"
+			"password-input-2 password-input-2"
+			"signup login";
+		}
+
+		& .form-login {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 20vh);
+			grid-template-areas: "username-input username-input"
+			"password-input password-input"
+			"login signup";
+		}
+
+		& #username-input {
+			grid-area: username-input;
+		}
+
+		& #password-input {
+			grid-area: password-input;
+		}
+
+		& #password-input-2 {
+			grid-area: password-input-2;
+		}
+
+		& #button-signup {
+			grid-area: signup;
+		}
+
+		& #button-login {
+			grid-area: login;
+		}
 	}
 `
 

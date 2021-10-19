@@ -5,7 +5,7 @@ import BasicFormStyled from './BasicFormStyled'
 const SignUp = ({ changePage, onSubmit }) => {
 	return (
 		<BasicFormStyled>
-			<form className="form-card" onSubmit={onSubmit}>
+			<form className="form-card form-signup" onSubmit={onSubmit}>
 				<InputNormalStyled
 					type="text"
 					placeholder="Username" 
@@ -24,14 +24,17 @@ const SignUp = ({ changePage, onSubmit }) => {
 					id="password-input-2"
 					name="passwordInput2"
 				/>
-
-				<BtnStyled btnForm boxShadow
-					text="Sign up" type="submit"
-				/>
-				<BtnStyled btnForm boxShadow outline
-					text="login" type="button"
-					click={changePage("login")}
-				/>
+				<div id="button-signup">
+					<BtnStyled btnForm boxShadow
+						text="Sign up" type="submit"
+					/>
+				</div>
+				<div id="button-login">
+					<BtnStyled btnForm boxShadow outline
+						text="login" type="button"
+						click={changePage("login")}
+					/>
+				</div>
 			</form>
 		</BasicFormStyled>
 	)

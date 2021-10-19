@@ -5,7 +5,7 @@ import BasicFormStyled from "./BasicFormStyled"
 const LoginPage = ({ handleSubmit, handleOnChange, changePage }) => {
 	return (
 		<BasicFormStyled>
-			<form className="form-card" onSubmit={handleSubmit}>
+			<form className="form-card form-login" onSubmit={handleSubmit}>
 				<InputNormalStyled
 					type="text"
 					placeholder="Username" 

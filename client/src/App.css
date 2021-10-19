@@ -69,18 +69,7 @@ html, body {
 	filter: brightness(140%);
 }
 
-.icon-big:hover, .icon-small:hover {
-	cursor: pointer;
-}
-
 .icon-big {
 	width: 25px;
 	height: 25px;
 }
-
-.icon-small {
-	position: sticky;
-	width: 20px;
-	height: 20px;
-}
-
