@@ -6,9 +6,9 @@ const ContentStyled = styled(ContentContainer)`
 	height: 80vh;
 	overflow: scroll;
 
-	@media only screen and (min-width: ${breakpoints.desktop}) {
+	/* @media only screen and (min-width: ${breakpoints.desktop}) {
 		height: 100vh;
-	}
+	} */
 `
 
 export default ContentStyled

@@ -18,7 +18,8 @@ const App = () => {
   const [citterContent, setCitterContent] = useState([])
   const [user, setUser] = useState() 
   const [userProfile, setUserProfile] = useState(false)
-  
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
+
   useEffect(() => {
     axios.get(`${url}/message`)
       .then(response => setCitterContent([...response.data]))
@@ -62,6 +63,10 @@ const App = () => {
     if (sideBar.offsetWidth <= e.offsetX) {
       setPage('feed')
     }
+  })
+
+  window.addEventListener('resize', () => {
+    setWindowSize(window.innerWidth)
   })
 
   const changePage = nextPage => event => {
@@ -147,6 +152,7 @@ const App = () => {
     <main>
       <PageControl 
         page={page}
+        windowSize={windowSize}
         user={user}
         changePage={changePage}
         citterContent={citterContent}

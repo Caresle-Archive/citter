@@ -15,6 +15,7 @@ import { breakpoints } from '../theme.js'
 const PageControl = (props) => {
 	const {
 		page,
+		windowSize,
 		user,
 		changePage,
 		citterContent,
@@ -48,15 +49,19 @@ const PageControl = (props) => {
 	}
 	if (page === 'feed') {
 		const desktop = breakpoints.desktop.replace('px', '')
-		if (window.innerWidth === parseInt(desktop)) {
+		if (windowSize === parseInt(desktop)) {
 			return (
 				<>
+					<NewCitterStyled 
+						cancelCitter={changePage}
+						submitCitter={newCitter}
+					/>
 					<ContentStyled
 						citterMessage={citterContent} 
 						url={url}
 						handleSocial={onSocialInteraction}
 					/>
-					<SideBarStyled boxShadow changePage={changePage} />
+					<SideBarStyled changePage={changePage} />
 					<BtnRound boxShadow cittear={changePage} />
 				</>
 			)

@@ -79,9 +79,15 @@ const SideBarStyled = styled(SideBar)`
 	}
 
 	@media only screen and (min-width: ${breakpoints.desktop}) {
-		width: 300px;
+		width: 370px;
 		position: absolute;
 		top: 0;
+		background-color: ${colors.background};
+		border: 1px solid ${colors.grayDark};
+
+		& .sidebar-item:hover {
+			background-color: ${colors.backgroundDark};
+		}
 	}
 `
 
