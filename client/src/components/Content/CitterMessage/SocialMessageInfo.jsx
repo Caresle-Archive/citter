@@ -22,7 +22,7 @@ const SocialMessageInfo = ({ onSocial, social }) => {
 	const classesLikes = (likes !== ' ')
 		? 'social-item social-item-red'
 		: 'social-item'
-
+	
 	return (
 		<div className="social-info-container">
 			<div className="social-item">

@@ -2,10 +2,10 @@ const ProfileStats = () => {
 	return (
 		<div className="sidebar-social-stats">
 			<div>
-				24 <span>Siguiendo</span>
+				24 <span>Following</span>
 			</div>
 			<div>
-				19 <span>Seguidores</span>
+				19 <span>Followers</span>
 			</div>
 		</div>
 	)

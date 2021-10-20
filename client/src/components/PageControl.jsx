@@ -1,4 +1,3 @@
-import ProfilePage from './ProfilePage/ProfilePage.jsx'
 import LoginPage from './Forms/LoginPage.jsx'
 import SignUp from './Forms/SignUp.jsx'
 
@@ -9,6 +8,7 @@ import TopBarStyled from './NavBar/TopBar/TopBarStyled.js'
 import SideBarStyled from './NavBar/SideBar/SideBarStyled.js'
 import ContentStyled from './Content/ContentStyled.js'
 import NewCitterStyled from './Content/NewCitter/NewCitterStyled.js'
+import ProfilePageStyled from './ProfilePage/ProfilePageStyled.js'
 
 import { breakpoints } from '../theme.js'
 
@@ -86,11 +86,12 @@ const PageControl = (props) => {
 	} else if (page === 'profile') {
 		return (
 			<>
-				<ProfilePage />
+				<ProfilePageStyled />
 				<ContentStyled
 					user={user}
 					userProfile={userProfile}
 					citterMessage={citterContent}
+					handleSocial={onSocialInteraction}
 				/>
 				<BtnRound cittear={changePage} />
 				<BottomBarStyled changePage={changePage} />
