@@ -18,7 +18,7 @@ const CitterMessage = ({ className, idKey, data, onSocial }) => {
 				{data.message}
 			</p>
 			<MediaCitter media={data.media}/>
-			<SocialMessageInfo onSocial={onSocial} social={data.social}/>
+			<SocialMessageInfo onSocial={onSocial} idPass={idKey} social={data.social}/>
 		</div>
 	)
 }

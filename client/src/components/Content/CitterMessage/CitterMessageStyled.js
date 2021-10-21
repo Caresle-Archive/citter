@@ -79,14 +79,6 @@ const CitterMessageStyled = styled(CitterMessage)`
 			}
 		}
 
-		& .social-item-red {
-			color: ${colors.like};
-		}
-
-		& .social-item-green {
-			color: ${colors.share};
-		}
-
 		& .ml-3 {
 			margin-left: 3rem;
 		}

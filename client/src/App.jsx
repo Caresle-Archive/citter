@@ -130,22 +130,27 @@ const App = () => {
       .catch(err => console.log(err))
   }
 
-  const handleSocialInteraction = social => (e) => {
-		console.log(e.target, social)
-    // const mainCard = socialCard.parentElement
-		// const socialToUpdate = {
-		// 	like: false,
-		// 	share: false,
-		// 	comment: false
-		// }
-		// if (social === 'like') socialToUpdate.like = true
-		// if (social === 'share') socialToUpdate.share = true
-		// if (social === 'comment') socialToUpdate.comment = true
-    // console.log(mainCard.id, socialToUpdate)
-    // axios.post(`${url}/message/${mainCard.id}`, socialToUpdate)
-    //   .catch(err => console.log(err))
-    // const socialValue = e.target.parentElement.childNodes[1]
-    // socialValue.innerHTML = parseInt(socialValue.innerHTML) + 1
+  const handleSocialInteraction = (social, id) => (e) => {
+		const socialToUpdate = {
+			like: false,
+			share: false,
+			comment: false
+		}
+		if (social === 'like') {
+      socialToUpdate.like = true
+      const card = document.getElementById(`social-item-like-${id}`)
+      const value = card.childNodes[1].innerHTML
+      card.childNodes[1].innerHTML = parseInt(value) + 1
+      
+    }
+		if (social === 'share') {
+      socialToUpdate.share = true
+      const card = document.getElementById(`social-item-share-${id}`)
+      const value = card.childNodes[1].innerHTML
+      card.childNodes[1].innerHTML = parseInt(value) + 1
+    }
+    axios.post(`${url}/message/${id}`, socialToUpdate)
+      .catch(err => console.log(err))
 	}
 
   return (
