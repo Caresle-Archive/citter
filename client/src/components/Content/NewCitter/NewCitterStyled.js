@@ -17,7 +17,7 @@ const NewCitterStyled = styled(NewCitter)`
 
 	@media only screen and (min-width: ${breakpoints.desktop}) {
 		width: 700px;
-		height: 20vh;
+		height: 22vh;
 		margin-left: 370px;
 		
 		& form {

@@ -1,4 +1,3 @@
-// import './CitterMessage.css'
 import SocialMessageInfo from './SocialMessageInfo.jsx'
 import UserInfoHeader from './UserInfoHeader.jsx'
 import MediaCitter from './MediaCitter.jsx'
@@ -13,7 +12,7 @@ const CitterMessage = ({ className, idKey, data, onSocial }) => {
 		<div id={idKey} className={className}>
 			<UserInfoHeader 
 				username={data.username}
-				name={data.name}
+				name={data.username}
 			/>
 			<p>
 				{data.message}

@@ -7,7 +7,6 @@ const getAllMessages = async (req, res) => {
 
 const createMessage = async (req, res) => {
 	const { message, media, social } = req.body
-	
 	const response = await Message.create({
 		idUser: req.userId,
 		name: req.name,

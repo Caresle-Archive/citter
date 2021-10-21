@@ -27,7 +27,7 @@ const PageControl = (props) => {
 		handleSignup,
 		onSocialInteraction
 	} = props
-
+	const desktop = breakpoints.desktop.replace('px', '')
 	
 	if (!user && page === 'login') {
 		return (
@@ -48,7 +48,7 @@ const PageControl = (props) => {
 		)
 	}
 	if (page === 'feed') {
-		const desktop = breakpoints.desktop.replace('px', '')
+		
 		if (windowSize === parseInt(desktop)) {
 			return (
 				<>
@@ -61,7 +61,7 @@ const PageControl = (props) => {
 						url={url}
 						handleSocial={onSocialInteraction}
 					/>
-					<SideBarStyled changePage={changePage} />
+					<SideBarStyled changePage={changePage} user={user}/>
 					<BtnRound boxShadow cittear={changePage} />
 				</>
 			)
@@ -81,12 +81,26 @@ const PageControl = (props) => {
 		)
 	} else if (page === 'sidebar') {
 		return (
-			<SideBarStyled boxShadow changePage={changePage} />
+			<SideBarStyled boxShadow changePage={changePage} user={user} />
 		)
 	} else if (page === 'profile') {
+		if (windowSize === parseInt(desktop)) {
+			return (
+				<>
+					<ProfilePageStyled user={user} changePage={changePage}/>
+					<ContentStyled
+						user={user}
+						userProfile={userProfile}
+						citterMessage={citterContent}
+						handleSocial={onSocialInteraction}
+					/>
+					
+				</>
+			)
+		}
 		return (
 			<>
-				<ProfilePageStyled />
+				<ProfilePageStyled user={user} changePage={changePage}/>
 				<ContentStyled
 					user={user}
 					userProfile={userProfile}
